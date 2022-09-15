@@ -1,0 +1,29 @@
+
+public class Temperature {
+
+	private double celsius;
+	private double fahrenheit;
+	private double temperature;
+
+	public Temperature() {
+		this.temperature=0;
+		this.celsius=0;
+		this.fahrenheit=32;
+	}
+
+	public void setCelsius(double value) {
+		this.celsius = value;
+	}
+
+	public void setFahrenheit(double value) {
+		this.fahrenheit = value;
+	}
+
+	public double asCelsius() {
+
+	}
+
+	public double asFahrenheit() {
+
+	}
+}

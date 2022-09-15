@@ -1,0 +1,6 @@
+- falta polimorfismo para el método getCharge
+- cambiar el get y set price code
+
+- clave solucion -> 2#G8koN*]
+
+TAREA DS

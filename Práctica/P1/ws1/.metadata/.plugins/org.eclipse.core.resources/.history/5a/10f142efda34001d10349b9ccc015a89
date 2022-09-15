@@ -1,0 +1,28 @@
+
+public class Temperature {
+
+	private double celsius;
+	private double fahrenheit;
+	private double[] temperatures;
+
+	public Temperature(int value) {
+		if (value > 0)
+			this.temperatures = new double[value];
+	}
+
+	public void setCelsius(double value) {
+		this.celsius = value;
+	}
+
+	public void setFahrenheit(double value) {
+		this.fahrenheit = value;
+	}
+
+	public double asCelsius() {
+
+	}
+
+	public double asFahrenheit() {
+
+	}
+}
