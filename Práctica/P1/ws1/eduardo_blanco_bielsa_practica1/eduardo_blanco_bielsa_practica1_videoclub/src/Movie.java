@@ -1,22 +1,14 @@
 public class Movie {
-	public static final int CHILDRENS = 2;
-	public static final int NEW_RELEASE = 1;
-	public static final int REGULAR = 0;
+	public static final MovieType CHILDRENS = new ChildrensMovie();
+	public static final MovieType NEW_RELEASE = new NewReleaseMovie();
+	public static final MovieType REGULAR = new RegularMovie();
 
 	private String title;
-	private int priceCode;
+	private MovieType movieType;
 
-	public Movie(String title, int priceCode) {
+	public Movie(String title, MovieType movieType) {
 		this.title = title;
-		this.priceCode = priceCode;
-	}
-
-	public int getPriceCode() {
-		return priceCode;
-	}
-
-	public void setPriceCode(int priceCode) {
-		this.priceCode = priceCode;
+		this.movieType = movieType;
 	}
 
 	public String getTitle() {
@@ -24,32 +16,10 @@ public class Movie {
 	}
 
 	public double getCharge(int daysRented) {
-		double result = 0;
-		// Calcula el importe de cada alquiler
-		switch (getPriceCode()) {
-		case Movie.REGULAR:
-			result += 2;
-			if (daysRented > 2)
-				result += (daysRented - 2) * 1.5;
-			break;
-		case Movie.NEW_RELEASE:
-			result += daysRented * 3;
-			break;
-		case Movie.CHILDRENS:
-			result += 1.5;
-			if (daysRented > 3)
-				result += (daysRented - 3) * 1.5;
-			break;
-		}
-		return result;
+		return movieType.getCharge(daysRented);
 	}
 
 	public int getFrequentRenterPoints(int daysRented) {
-		int frequentRenterPoints = 1;
-		// Un punto extra en el caso de las novedades alquiladas por un período de dos o
-		// más días
-		if ((getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1)
-			frequentRenterPoints++;
-		return frequentRenterPoints;
+		return movieType.getFrequentRenterPoints(daysRented);
 	}
 }

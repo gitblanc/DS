@@ -1,7 +1,2 @@
-1663236937005	Extract method 'amountFor'
-1663237314574	Extract method 'getFrequentRenterPoints'
-1663237359044	Rename local variable 'each'
-1663237830742	Move method 'amountFor'
-1663237869138	Move method 'getFrequentRenterPoints'
-1663238146191	Move method 'getCharge'
-1663238422677	Move method 'getFrequentRenterPoints'
+1663407656364	Delete element
+1663407990298	Delete element
