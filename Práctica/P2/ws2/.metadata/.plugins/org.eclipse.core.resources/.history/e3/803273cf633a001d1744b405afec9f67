@@ -1,0 +1,19 @@
+package instructions;
+
+import main.Instruction;
+
+public class Input implements Instruction{
+
+	@Override
+	public int executeInstruction(int ip) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Instruction generateInstruction(String token) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

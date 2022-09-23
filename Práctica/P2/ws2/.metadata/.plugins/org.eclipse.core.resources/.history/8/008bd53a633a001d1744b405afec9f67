@@ -1,0 +1,14 @@
+package main;
+/**
+ * 
+ */
+
+/**
+ * @author UO285176
+ *
+ */
+public interface Instruction {
+	int executeInstruction(int ip);
+
+	void generateInstruction(String token);
+}

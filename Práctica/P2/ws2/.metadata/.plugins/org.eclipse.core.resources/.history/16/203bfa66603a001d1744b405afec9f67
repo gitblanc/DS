@@ -1,0 +1,7 @@
+package instructions;
+
+import main.Instruction;
+
+public class Push implements Instruction{
+
+}

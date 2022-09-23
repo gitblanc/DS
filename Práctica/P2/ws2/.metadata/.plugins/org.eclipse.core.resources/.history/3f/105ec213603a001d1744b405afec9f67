@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+
+/**
+ * @author UO285176
+ *
+ */
+public interface Instruction {
+	int executeInstruction(int ip);
+}

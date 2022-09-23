@@ -1,0 +1,19 @@
+package instructions;
+
+import main.Instruction;
+
+public class Push implements Instruction{
+
+	@Override
+	public int executeInstruction(int ip) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void generateInstruction(String token) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

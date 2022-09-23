@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package main;
+
+/**
+ * @author UO285176
+ *
+ */
+public class InstructionParser {
+
+	public static Instruction[] parseInstructions(String[] tokens) {
+		Instruction[] instructions;
+		
+	}
+}
