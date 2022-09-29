@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="main.Instruction"/>
     <fullyQualifiedTypeName name="instructions.Push"/>
+    <fullyQualifiedTypeName name="main.Interpreter"/>
 </qualifiedTypeNameHistroy>

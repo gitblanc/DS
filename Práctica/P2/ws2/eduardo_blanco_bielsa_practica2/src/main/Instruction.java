@@ -8,6 +8,7 @@ package main;
  *
  */
 public interface Instruction {
-	int executeInstruction(int ip);
-
+	int executeInstruction(Instruction[] sentence, int ip);
+	@Override
+	String toString();
 }

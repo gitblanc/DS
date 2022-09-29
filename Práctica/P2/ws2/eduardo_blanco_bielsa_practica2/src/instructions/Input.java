@@ -1,13 +1,15 @@
 package instructions;
 
 import main.Instruction;
+import main.Interpreter;
 
 public class Input implements Instruction{
 
 	@Override
-	public int executeInstruction(int ip) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int executeInstruction(Instruction[] sentence, int ip) {
+		System.out.println("Escriba un entero:");
+		Interpreter.push(Interpreter.readValue());
+		return ip+1;
 	}
 
 

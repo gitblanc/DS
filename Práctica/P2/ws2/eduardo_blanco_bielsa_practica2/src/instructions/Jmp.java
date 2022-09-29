@@ -5,9 +5,8 @@ import main.Instruction;
 public class Jmp implements Instruction{
 
 	@Override
-	public int executeInstruction(int ip) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int executeInstruction(Instruction[] sentence, int ip) {
+		return sentence[1].executeInstruction(sentence, ip);
 	}
 
 

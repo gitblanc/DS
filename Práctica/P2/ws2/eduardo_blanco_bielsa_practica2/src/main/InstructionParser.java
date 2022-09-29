@@ -46,6 +46,9 @@ public class InstructionParser {
 			case "output":
 				instructions[i] = new Output();
 				break;
+			default:
+				instructions[i] = new InstructionNumber(token, i);
+				break;
 			}
 			i++;
 		}

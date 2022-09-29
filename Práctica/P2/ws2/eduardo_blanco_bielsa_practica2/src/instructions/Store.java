@@ -1,14 +1,16 @@
 package instructions;
 
 import main.Instruction;
+import main.Interpreter;
 
-public class Store implements Instruction{
+public class Store implements Instruction {
 
 	@Override
-	public int executeInstruction(int ip) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int executeInstruction(Instruction[] sentence, int ip) {
+		int value = Interpreter.pop();
+		int address = Interpreter.pop();
+		Interpreter.setMemory(address, value);
+		return ip+1;
 	}
-
 
 }

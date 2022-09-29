@@ -18,3 +18,4 @@
 1663842183674	Copy compilation unit
 1663843304530	Change method 'add'
 1663843353706	Change method 'generateInstruction'
+1664102799751	Encapsulate field 'memory'

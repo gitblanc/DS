@@ -1,13 +1,16 @@
 package instructions;
 
 import main.Instruction;
+import main.Interpreter;
 
-public class Sub implements Instruction{
+public class Sub implements Instruction {
 
 	@Override
-	public int executeInstruction(int ip) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int executeInstruction(Instruction[] sentence, int ip) {
+		int b = Interpreter.pop();
+		int a = Interpreter.pop();
+		Interpreter.push(a - b);
+		return ip+1;
 	}
 
 }
