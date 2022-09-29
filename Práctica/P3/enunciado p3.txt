@@ -1,0 +1,9 @@
+Vamos a hacer un minieditor de dibujo, un editor gráfico
+
+- 4 Botones
+	Herramienta seleccion: permite mover las figuras. Si se pulsa en una figura y sin soltar muevo la figura. Si se pulsa donde no hay figura no pasa nada.
+	Herramienta de creacion rectangulo
+	Herramienta de creacion triangulo: con el 1 click se crea el primer vértice, con el 2 click el 2 vértice y con el 3 click el 3 vertice
+	Herramienta de creacion circulo
+
+- Cada vez que termine cualquier herramienta, se va a volver a poner activa la herramienta de seleccion
