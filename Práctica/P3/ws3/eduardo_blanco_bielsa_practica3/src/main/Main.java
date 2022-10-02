@@ -8,7 +8,6 @@ import editor.*;
 public class Main 
 {
 	private Editor editor;
-	private boolean exit;
 	private UserInterface console;
 	
 	public static void main(String[] args) throws IOException
