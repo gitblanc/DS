@@ -1,0 +1,27 @@
+package campos;
+
+import java.util.*;
+
+public class Formulario {
+	private List<Campo> campos = new ArrayList<Campo>();
+
+	public void addCampo(Campo campo) {
+		campos.add(campo);
+	}
+
+	public void PideDatos() {
+		for (Campo campo : campos) {
+			campo.pideDato();
+			System.out.println(campo.getValor());
+		}
+	}
+
+	public void generarCampos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void pedirDatos() {
+		PideDatos();
+	}
+}

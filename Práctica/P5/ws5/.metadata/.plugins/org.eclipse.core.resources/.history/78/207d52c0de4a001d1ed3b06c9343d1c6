@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package editor.tools;
+
+import editor.core.Tool;
+
+/**
+ * @author UO285176
+ *
+ */
+public class UndoTool implements Tool{
+
+	@Override
+	public void clickOn(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void release() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void reset() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

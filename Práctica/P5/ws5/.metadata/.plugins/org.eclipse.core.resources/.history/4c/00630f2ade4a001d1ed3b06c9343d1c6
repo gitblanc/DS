@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package editor.tools;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import editor.core.Tool;
+import editor.ui.Menu;
+
+/**
+ * @author UO285176
+ *
+ */
+public class UndoTool{
+	
+	private Map<String, Tool> toolsCreated = Menu.getToolsCreated();
+
+}

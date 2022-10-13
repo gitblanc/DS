@@ -1,0 +1,6 @@
+package main;
+
+public interface Campo {
+	public void pideDato();
+	public String getValor();//cambiarlo
+}

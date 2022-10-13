@@ -1,0 +1,4 @@
+- Añadir el ctrl+z y el ctrl+y de windows en el editor
+- Si lo movemos, que mueva a la posicion original, y no a una de las miles que tomó hasta que se movió
+- Comprobar como funciona mediante el jar que nos proporciona
+

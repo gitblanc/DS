@@ -1,0 +1,15 @@
+package main;
+
+import campos.CampoNumero;
+import campos.CampoPredefinido;
+import campos.CampoTexto;
+import campos.Formulario;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Formulario formulario = new Formulario();
+		formulario.generarCampos();
+		formulario.pedirDatos();
+	}
+}

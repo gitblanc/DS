@@ -1,0 +1,18 @@
+package campos;
+
+public class CampoTexto extends Campo {
+
+	public CampoTexto(String etiqueta) {
+		super(etiqueta);
+	}
+
+	@Override
+	protected boolean comprobarValor(String texto) {
+		for (char ch : texto.toCharArray()) {
+			if (!Character.isLetter(ch)) {
+				return false;
+			}
+		}
+		return true;
+	}
+}

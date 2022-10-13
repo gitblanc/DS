@@ -1,0 +1,26 @@
+package main;
+
+import campos.CampoNumero;
+import campos.CampoPredefinido;
+import campos.CampoTexto;
+import campos.Formulario;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Formulario formulario = new Formulario();
+		generarCampos(formulario);
+		pedirDatos(formulario);
+	}
+
+	private static void pedirDatos(Formulario formulario) {
+		formulario.PideDatos();
+	}
+
+	private static void generarCampos(Formulario formulario) {
+		formulario.addCampo(new CampoTexto("Nombre"));
+		formulario.addCampo(new CampoTexto("Apellido"));
+		formulario.addCampo(new CampoNumero("Telefono"));
+		formulario.addCampo(new CampoPredefinido("Ciudad", "Santander", "Oviedo", "Cadiz"));
+	}
+}

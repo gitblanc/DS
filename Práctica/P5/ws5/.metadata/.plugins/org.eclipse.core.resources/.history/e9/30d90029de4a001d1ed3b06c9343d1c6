@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package editor.tools;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import editor.core.Tool;
+
+/**
+ * @author UO285176
+ *
+ */
+public class UndoTool{
+	
+	private Map<String, Tool> toolsCreated = ;
+
+}

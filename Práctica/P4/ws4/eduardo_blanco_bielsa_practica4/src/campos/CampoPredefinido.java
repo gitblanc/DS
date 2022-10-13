@@ -1,0 +1,21 @@
+package campos;
+
+public class CampoPredefinido extends Campo {
+
+	private String[] valores;
+
+	public CampoPredefinido(String etiqueta, String... valores) {
+		super(etiqueta);
+		this.valores = valores;
+	}
+
+	@Override
+	protected boolean comprobarValor(String texto) {
+		for (String valor : valores) {
+			if (texto.toLowerCase().equals(valor.toLowerCase())) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

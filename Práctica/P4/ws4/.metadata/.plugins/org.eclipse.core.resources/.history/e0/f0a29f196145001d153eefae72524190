@@ -1,0 +1,11 @@
+package campos;
+
+public abstract class Campo {
+	protected String etiqueta;
+	protected String texto;
+	
+	public abstract void pideDato();
+	public String getValor() {
+		return texto;
+	}
+}

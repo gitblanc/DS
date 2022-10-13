@@ -1,0 +1,21 @@
+package campos;
+
+public class CampoNumero extends Campo {
+
+
+	public CampoNumero(String etiqueta) {
+		super(etiqueta);
+	}
+
+	@Override
+	protected boolean comprobarValor(String texto) {
+		for (char ch : texto.toCharArray()) {
+			if (!Character.isDigit(ch)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	
+}

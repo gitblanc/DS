@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+D:\3rd grade\DS-lab\P4\ws4\.metadata\.plugins\org.eclipse.jdt.core
+3589616641.index
+1865797976.index
+2424646841.index
+1674355574.index
+2678129651.index
+1291609531.index

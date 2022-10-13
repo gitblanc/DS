@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package editor.tools;
+
+import java.util.Map;
+
+import editor.core.Tool;
+import editor.ui.Menu;
+
+/**
+ * @author UO285176
+ *
+ */
+public class UndoTool{
+	
+	//Herramientas que han sido creadas
+	private Map<String, Tool> toolsCreated = Menu.getToolsCreated();
+	
+	public void actualizarHerramientasCreadas() {
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="editor.core.Tool"/>
+    <fullyQualifiedTypeName name="editor.ui.Menu"/>
+    <fullyQualifiedTypeName name="editor.tools.UndoTool"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>
