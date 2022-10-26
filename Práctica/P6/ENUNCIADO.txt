@@ -1,0 +1,15 @@
+con una pulsacion muestra una ventana emergente con algo más de información
+
+al dejar pulsado la api permite ejecutarse una acción determinada dependiendo del tipo de modelo
+
+Los modelos no tienen nada en común
+
+Vamos a usar la biblioteca de maps
+
+Olvidarnos del formulario
+
+Del punto 2 en adelante no tocar nada
+
+TO DO:
+-----
+- Hay que hacer que funcione el poder añadir elementos al mapa

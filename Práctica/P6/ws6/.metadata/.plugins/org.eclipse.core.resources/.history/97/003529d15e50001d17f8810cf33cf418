@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package model;
+
+import google.maps.MapElement;
+
+/**
+ * @author UO285176
+ *
+ */
+public abstract class Model implements MapElement{
+
+}

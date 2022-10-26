@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package model;
+
+/**
+ * @author UO285176
+ *
+ */
+public abstract class Model {
+
+}

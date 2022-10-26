@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package model;
+
+import google.maps.MapElement;
+
+/**
+ * @author UO285176
+ *
+ */
+public interface Model implements MapElement {
+
+}
