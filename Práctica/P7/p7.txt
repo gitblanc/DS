@@ -1,0 +1,7 @@
+MODIFICACIONES
+
+Cuando se hace una copia, se quiere normalizar los saltos de línea -> si vemos un "\r\n" quiero ver sólo "\n"
+
+Para mandar por internet se quiere encriptar(+1 si es letra o dígito) (sumarle 1 al char) Comprobar si es carácter o dígito
+
+Para mandar por bluetooth se quiere encriptar y eliminar los espacios repetidos(normalizar los saltos de línea)
