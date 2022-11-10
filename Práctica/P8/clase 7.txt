@@ -1,0 +1,3 @@
+N9,3yG&H
+
+Se usa el patrón Decorator
