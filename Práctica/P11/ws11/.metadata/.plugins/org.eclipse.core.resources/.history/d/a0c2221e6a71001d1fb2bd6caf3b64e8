@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package CH.ifa.draw.samples.nada;
+
+import java.awt.Point;
+
+import CH.ifa.draw.framework.DrawingView;
+import CH.ifa.draw.framework.Figure;
+import CH.ifa.draw.standard.CreationTool;
+
+/**
+ * @author UO285176
+ *
+ */
+public class EjemploTool extends CreationTool {
+
+	public EjemploTool(DrawingView view) {// patrón prototype
+		super(view, new EjemploFigure(view.lastClick().x, view.lastClick().y, view.lastClick(), view.lastClick()));
+	}
+
+}

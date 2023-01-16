@@ -26,7 +26,6 @@ public class Interpreter
 	private static void executeProgram() 
 	{
 		while (ip < instructions.size()) {
-			System.out.println(ip);
 			String[] sentence = instructions.get(ip);
 
 			if (sentence[0].equals("push")) {

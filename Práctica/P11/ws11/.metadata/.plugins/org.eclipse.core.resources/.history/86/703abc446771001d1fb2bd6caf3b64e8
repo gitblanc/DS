@@ -1,0 +1,41 @@
+package CH.ifa.draw.samples.nada;
+
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.util.Vector;
+
+import CH.ifa.draw.standard.AbstractFigure;
+
+public class EjemploFigure extends AbstractFigure {
+
+	public EjemploFigure() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void draw(Graphics g) {
+		g.setColor(java.awt.Color.WHITE);
+		g.fillRect(0, 0, 100, 100);
+	}
+
+	public Rectangle displayBox() {
+		return new Rectangle(0, 0, 100, 100);
+	}
+
+	public Vector handles() {
+		return new Vector();
+	}
+
+	@Override
+	protected void basicMoveBy(int dx, int dy) {//no invocar al draw
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void basicDisplayBox(Point origin, Point corner) {//puntos inicio y fin
+		// TODO Auto-generated method stub
+
+	}
+
+}

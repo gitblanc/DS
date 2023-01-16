@@ -1,3 +1,5 @@
+import Movies.Movie;
+
 /**
  * Esta clase representa el alquiler de una película por parte de un cliente.
  */
@@ -20,5 +22,13 @@ public class Rental
 	public Movie getMovie() 
 	{
 		return movie;
+	}
+
+	public double getCharge() {
+		return movie.getCharge(daysRented);
+	}
+
+	public int getFreq() {
+		return movie.getFreq(daysRented);
 	}
 }

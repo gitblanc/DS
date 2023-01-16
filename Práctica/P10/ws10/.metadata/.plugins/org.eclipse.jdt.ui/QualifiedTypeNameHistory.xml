@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="platform.Platform"/>
+    <fullyQualifiedTypeName name="platform.PlatformAPI"/>
+    <fullyQualifiedTypeName name="java.awt.Point"/>
+    <fullyQualifiedTypeName name="platform.windows.WindowsAPI"/>
+    <fullyQualifiedTypeName name="platform.playstation.Playstation5API"/>
+    <fullyQualifiedTypeName name="platform.android.AndroidAPI"/>
+    <fullyQualifiedTypeName name="platform.adapter.AndroidAdapter"/>
+    <fullyQualifiedTypeName name="platform.Api"/>
+    <fullyQualifiedTypeName name="platform.adapter.WindowsAdapter"/>
+    <fullyQualifiedTypeName name="platform.adapter.PlayStationAdapter"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,7 @@
+Explicación de cada solución:
+
+1) Es la solución más simple suponiendo que siempre se suelta el ratón hacia abajo y hacia la derecha (que el origen siempre será menor que el punto final).
+
+2) Arregla el inconveniente de la anterior: funciona independientemente de la posición de los puntos inicial y final.
+
+3) Las anteriores estaban implementadas usando ints. Se muestra aquí cómo se podría haber ahorrado código usando java.awt.Rectangle.

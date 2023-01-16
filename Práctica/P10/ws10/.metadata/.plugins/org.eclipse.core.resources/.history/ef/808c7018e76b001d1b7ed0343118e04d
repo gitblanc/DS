@@ -1,0 +1,8 @@
+package platform;
+/**
+ * @author UO285176
+ *
+ */
+public interface Api {
+
+}

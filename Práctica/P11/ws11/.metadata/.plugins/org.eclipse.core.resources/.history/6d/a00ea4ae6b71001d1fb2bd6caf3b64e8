@@ -1,0 +1,59 @@
+package CH.ifa.draw.samples.nada;
+
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.util.Vector;
+
+import CH.ifa.draw.standard.AbstractFigure;
+
+public class EjemploFigure extends AbstractFigure {
+
+	private int x = 0;
+	private int y = 0;
+	private Point origin;
+	private Point corner;
+
+	public EjemploFigure() {
+	}
+
+	public EjemploFigure(int x, int y, Point origin, Point corner) {
+		this.x = x;
+		this.y = y;
+		this.origin = origin;
+		this.corner = corner;
+	}
+
+	public EjemploFigure(Rectangle clipBounds) {
+		this.x = clipBounds.x;
+		this.y = clipBounds.y;
+		this.origin = clipBounds.getLocation();
+		this.corner = clipBounds.getLocation();
+	}
+
+	public void draw(Graphics g) {
+		g.setColor(java.awt.Color.WHITE);
+		g.fillRect(0, 0, x, y);
+	}
+
+	public Rectangle displayBox() {
+		return new Rectangle(0, 0, x, y);
+	}
+
+	public Vector handles() {
+		return new Vector();
+	}
+
+	@Override
+	protected void basicMoveBy(int dx, int dy) {// no invocar al draw
+		this.x = dx;
+		this.y = dy;
+	}
+
+	@Override
+	public void basicDisplayBox(Point origin, Point corner) {// puntos inicio y fin
+		this.origin = origin;
+		this.corner = corner;
+	}
+
+}

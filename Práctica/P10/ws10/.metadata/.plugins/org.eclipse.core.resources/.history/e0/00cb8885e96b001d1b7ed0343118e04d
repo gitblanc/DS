@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package platform.adapter;
+
+/**
+ * @author UO285176
+ *
+ */
+public class PlayStationAdapter implements Api{
+
+}

@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package platform.adapter;
+
+import java.awt.Point;
+
+import platform.Api;
+import platform.Image2D;
+
+/**
+ * @author UO285176
+ *
+ */
+public class Adapter implements Api{
+
+	
+}

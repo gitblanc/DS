@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package platform.adapter;
+
+import platform.Api;
+
+/**
+ * @author UO285176
+ *
+ */
+public class AndroidAdapter implements Api{
+
+}

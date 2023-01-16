@@ -1,0 +1,13 @@
+package main;
+
+import game.BallGame;
+import platform.adapter.AndroidAdapter;
+import platform.android.AndroidAPI;
+
+public class Main {
+	public static void main(String[] args) {
+		AndroidAdapter a = new AndroidAdapter();// se pasa directamente la api que queremos usar
+		BallGame game = new BallGame();
+		game.play(a);
+	}
+}

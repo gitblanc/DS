@@ -1,0 +1,16 @@
+package platform;
+
+import java.awt.Point;
+
+/**
+ * @author UO285176
+ *
+ */
+public interface Api {
+	public Image2D load(String name);
+
+	public void paint(int x, int y, Image2D image);
+
+	public Point getTouch();
+
+}

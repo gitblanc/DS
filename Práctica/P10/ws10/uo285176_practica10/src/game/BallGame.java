@@ -1,0 +1,45 @@
+package game;
+
+import java.awt.Point;
+
+import platform.Api;
+import platform.Image2D;
+
+/* Esta clase (y todo el código que hubiera dentro de este paquete) sería el
+ * código del videojuego completo, y es lo que se desea reutilizar en las distintas
+ * plataformas.
+ */
+
+public class BallGame {
+	private Api api;
+
+	public BallGame(Api a) {
+		setAPI(a);
+	}
+
+	public void play() {
+		Image2D image = loadImage("ball.png");
+
+		// lógica principal del juego
+		for (int i = 0; i < 10; i++) {
+			Point point = getPosition();
+			drawBall(image, point);
+		}
+	}
+
+	private void setAPI(Api a) {
+		api = a;
+	}
+
+	private Image2D loadImage(String file) {
+		return api.load(file);
+	}
+
+	private Point getPosition() {
+		return api.getTouch();
+	}
+
+	private void drawBall(Image2D image, Point point) {
+		api.paint(point.x, point.y, image);
+	}
+}

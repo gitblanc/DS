@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+package platform.adapter;
+
+import java.awt.Point;
+
+import platform.Api;
+import platform.Image2D;
+
+/**
+ * @author UO285176
+ *
+ */
+public class Adapter implements Api{
+
+	@Override
+	public Image2D load(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void paint(int x, int y, Image2D image) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Point getTouch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setApi(Api api) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

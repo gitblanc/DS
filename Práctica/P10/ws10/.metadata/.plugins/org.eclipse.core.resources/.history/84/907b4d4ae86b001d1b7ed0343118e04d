@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package platform.adapter;
+
+import java.awt.Point;
+
+import game.Platform;
+import platform.Api;
+import platform.Image2D;
+import platform.android.AndroidAPI;
+import platform.playstation.Playstation5API;
+import platform.windows.WindowsAPI;
+
+/**
+ * @author UO285176
+ *
+ */
+public class Adapter implements Api {
+
+	private Platform p;
+
+	private AndroidAPI android;
+	private WindowsAPI windows;
+	private Playstation5API playstation;
+
+	@Override
+	public Image2D load(String name) {
+		return android.loadResource(name);
+	}
+
+	@Override
+	public void paint(int x, int y, Image2D image) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Point getTouch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setApi(Platform platform) {
+		p = platform;
+		if (p == Platform.ANDROID)
+			android = new AndroidAPI();
+		else if (p == Platform.WINDOWS)
+			windows = new WindowsAPI();
+		else
+			playstation = new Playstation5API();
+	}
+
+}

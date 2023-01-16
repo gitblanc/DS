@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package platform.adapter;
+
+import java.awt.Point;
+
+import game.Platform;
+import platform.Api;
+import platform.Image2D;
+
+/**
+ * @author UO285176
+ *
+ */
+public class PlayStationAdapter implements Api{
+
+	@Override
+	public Image2D load(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void paint(int x, int y, Image2D image) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Point getTouch() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setApi(Platform platform) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

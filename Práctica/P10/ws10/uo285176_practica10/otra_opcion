@@ -1,0 +1,3 @@
+En mi opinión, se podría utilizar también el patrón Abstract Factory,
+pues de esta manera se crearían de forma independiente las distintas APIS,
+y de esta forma no se revelará la implementación de ninguna de las implementaciones de las APIS.
