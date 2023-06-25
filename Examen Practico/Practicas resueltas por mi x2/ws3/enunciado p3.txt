@@ -1,0 +1,20 @@
+ENUNCIADO:
+Vamos a hacer un minieditor de dibujo, un editor gráfico
+
+- 4 Botones
+	Herramienta seleccion: permite mover las figuras. Si se pulsa en una figura y sin soltar muevo la figura. Si se pulsa donde no hay figura no pasa nada.
+	Herramienta de creacion rectangulo
+	Herramienta de creacion triangulo: con el 1 click se crea el primer vértice, con el 2 click el 2 vértice y con el 3 click el 3 vertice
+	Herramienta de creacion circulo
+
+- Cada vez que termine cualquier herramienta, se va a volver a poner activa la herramienta de seleccion
+
+
+SOLUCION:
+
+- Usar el patrón State: permite que un objeto modifique su comportamiento cada vez que cambie su estado interno
+Parecerá que cambia la clase del objeto
+
+- Hay que usarlo cuando:
+	- El comportamiento de un objeto depende de su estado, y debe cambiar en tiempo de ejecución dependiendo de ese estado
+	- Las operaciones tienen largas sentencias condicionales con múltiples ramas que dependen del estado del objeto. El State pone cada rama de la condición en una clase aparte.
