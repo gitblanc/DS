@@ -1,5 +1,7 @@
 package interpreter.ast.nodes;
 
-public interface Node
-{
+import interpreter.ast.visitors.Visitor;
+
+public interface Node {
+	Object accept(Visitor v, Object param);
 }

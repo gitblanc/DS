@@ -1,58 +1,61 @@
 package poll;
 
-public class Poll 
-{
+import java.util.List;
+import java.util.ArrayList;
+
+public class Poll {
 	private int yeses, nos;
 	private String question;
-	
-	public Poll(String question) 
-	{
+	private List<PollObserver> observers = new ArrayList<>();
+
+	public Poll(String question) {
 		this.question = question;
 	}
 
-	public String getQuestion() 
-	{
+	public String getQuestion() {
 		return question;
 	}
 
-	public int getYeses() 
-	{
+	public int getYeses() {
 		return yeses;
 	}
 
-	public int getNos() 
-	{
+	public int getNos() {
 		return nos;
 	}
 
-	public void incrementYeses() 
-	{
+	public void incrementYeses() {
 		yeses++;
-		updatePieChart();
-		updateBarChart();
-		saveResults();
+		notifyObservers();
 	}
 
-	public void incrementNos() 
-	{
+	public void incrementNos() {
 		nos++;
-		updatePieChart();
-		updateBarChart();
-		saveResults();
+		notifyObservers();
 	}
 
-	private void updateBarChart() 
-	{
-		System.out.println("Dibujando un gráfico de barras...");
+	public void addObserver(PollObserver o) {
+		observers.add(o);
 	}
 
-	private void updatePieChart() 
-	{
-		System.out.println("Dibujando un gráfico circular...");
+	public void removeObserver(PollObserver o) {
+		observers.remove(o);
+	}
+	
+	public void notifyObservers() {
+		for(PollObserver po : observers)
+			po.update(this);
 	}
 
-	private void saveResults() 
-	{
-		System.out.println("Guardando los resultados...");
-	}
+//	private void updateBarChart() {
+//		System.out.println("Dibujando un gráfico de barras...");
+//	}
+//
+//	private void updatePieChart() {
+//		System.out.println("Dibujando un gráfico circular...");
+//	}
+//
+//	private void saveResults() {
+//		System.out.println("Guardando los resultados...");
+//	}
 }
