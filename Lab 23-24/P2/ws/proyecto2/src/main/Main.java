@@ -47,19 +47,22 @@ public class Main {
 	}
 
 	// $ M�todos Auxiliares --------------------------------
-	private static void push(int valor) {
+	public static void push(int valor) {
 		pila[sp] = valor;
 		sp++;
 	}
 
-	private static int pop() {
+	public static int pop() {
 		sp--;
 		return pila[sp];
 	}
 
 	// $ Motor de Ejecuci�n --------------------------------
 	private static void ejecutaPrograma() {
+		int i = 0;
 		while (ip < instrucciones.size()) {
+			Instruction[] instruccion = instrucciones.get(ip);
+			ejecutaInstruccion(instruccion);
 //			String[] instruccion = instrucciones.get(ip);
 //
 //			if (instruccion[0].equals("push")) {
@@ -103,5 +106,9 @@ public class Main {
 //				ip++;
 //			}
 		}
+	}
+
+	private static void ejecutaInstruccion(Instruction[] instruccion) {
+		ip = instruccion[0].execute(instruccion, ip);
 	}
 }

@@ -8,5 +8,5 @@ package instructions;
  *
  */
 public interface Instruction {
-	void execute();
+	int execute(Instruction[] instruccion, int ip);
 }	
