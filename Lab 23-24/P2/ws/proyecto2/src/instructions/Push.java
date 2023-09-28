@@ -1,22 +1,17 @@
 package instructions;
 
+import main.Main;
+
 public class Push implements Instruction {
-
-	private int number;
-
-	public Push(String number) {
-		this.number = Integer.parseInt(number);
-	}
-
-	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
-	}
-	
 	@Override
 	public String toString() {
-		return "Push " + number;
+		return "Push";
+	}
+
+	@Override
+	public int execute(Instruction[] instruccion, int ip) {
+		Main.push(instruccion[1].execute(instruccion, ip));
+		return ip + 1;
 	}
 
 }

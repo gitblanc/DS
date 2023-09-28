@@ -22,11 +22,9 @@ public class Main {
 	private static int[] pila = new int[32];
 	private static int sp = 0;
 
-	private static Scanner console = new Scanner(System.in);
-
 	public static void main(String[] args) throws Exception {
 		BufferedReader fichero = new BufferedReader(new FileReader("factorial.txt"));
-		// BufferedReader fichero = new BufferedReader(new FileReader("fibonacci.txt"));
+//		BufferedReader fichero = new BufferedReader(new FileReader("fibonacci.txt"));
 
 		String linea;
 		while ((linea = fichero.readLine()) != null)
@@ -59,7 +57,7 @@ public class Main {
 
 	// $ Motor de Ejecuci�n --------------------------------
 	private static void ejecutaPrograma() {
-		int i = 0;
+//		int i = 0;
 		while (ip < instrucciones.size()) {
 			Instruction[] instruccion = instrucciones.get(ip);
 			ejecutaInstruccion(instruccion);
@@ -110,5 +108,9 @@ public class Main {
 
 	private static void ejecutaInstruccion(Instruction[] instruccion) {
 		ip = instruccion[0].execute(instruccion, ip);
+	}
+
+	public static int[] getMemoria() {
+		return memoria;
 	}
 }

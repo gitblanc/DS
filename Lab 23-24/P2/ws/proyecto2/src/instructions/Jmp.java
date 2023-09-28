@@ -3,13 +3,12 @@ package instructions;
 public class Jmp implements Instruction {
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
+	public String toString() {
+		return "Jmp";
 	}
 
 	@Override
-	public String toString() {
-		return "Jmp";
+	public int execute(Instruction[] instruccion, int ip) {
+		return instruccion[1].execute(instruccion, ip);
 	}
 }
