@@ -3,6 +3,10 @@ package tools;
 import editor.Editor;
 
 public class RectangleTool implements Tool {
+	
+	private Editor editor;
+	
+	private BoundingBox boundingBox;
 
 	public RectangleTool(Editor editor) {
 		// TODO Auto-generated constructor stub
