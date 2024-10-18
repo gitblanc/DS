@@ -1,0 +1,12 @@
+package editor.acciones;
+
+import editor.core.Dibujo;
+import editor.core.Figura;
+
+public class CreateFiguraAction implements Action {
+
+	public CreateFiguraAction(Figura figura, Dibujo dibujo) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

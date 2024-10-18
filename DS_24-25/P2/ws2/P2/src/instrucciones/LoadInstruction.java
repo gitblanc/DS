@@ -1,0 +1,13 @@
+package instrucciones;
+
+import main.Estado;
+
+public class LoadInstruction extends AumentarIpAbstract {
+
+	@Override
+	public void ejecutar(Estado estado) {
+		int direccion = estado.pop();
+		estado.push(estado.getMemoria()[direccion]);
+	}
+
+}

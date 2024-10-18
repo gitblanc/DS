@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/gitblanc/Documents/DS_24-25/P5/ws5/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+901126723.index
+542654904.index

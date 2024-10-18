@@ -1,0 +1,13 @@
+package peliculas;
+
+import videoclub.Alquiler;
+
+public class PeliculaNormal implements TipoPelicula {
+
+	@Override
+	public double getPrecio(Alquiler a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,0 +1,11 @@
+1728899022440	Encapsulate field 'undoableActions, ...'
+1728899028629	Encapsulate field 'redoableActions, ...'
+1728900053208	Rename package 'editor.acciones'
+1728900059555	Rename package 'editor.ambios'
+1728900085948	Rename type 'Action'
+1728900096858	Rename type 'ActionManager'
+1728900126114	Rename method 'execute'
+1728900155391	Rename method 'addUndoableAction'
+1728900222817	Rename type 'CreateFiguraAction'
+1728900329381	Encapsulate field 'historial, ...'
+1728900746654	Move compilation unit

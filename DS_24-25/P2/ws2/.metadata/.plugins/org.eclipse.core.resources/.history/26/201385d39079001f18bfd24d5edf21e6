@@ -1,0 +1,14 @@
+package main;
+
+public class Memoria {
+	
+	private int[] memoria;
+
+	public Memoria(int bytes) {
+		this.memoria = new int[bytes];
+	}
+
+	public int[] getMemoria() {
+		return memoria;
+	}
+}

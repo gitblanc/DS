@@ -1,0 +1,9 @@
+package tools;
+
+import editor.core.EditorWindow;
+
+public interface HerramientaCreacion extends Herramienta{
+	
+	protected EditorWindow editor;
+	void crearFigura();
+}

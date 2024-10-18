@@ -1,0 +1,9 @@
+package editor.cambios;
+
+public interface Cambio {
+
+	void execute();
+
+	void undo();
+
+}

@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+package formulario;
+
+/**
+ * 
+ */
+public abstract class CampoAbstracto {
+
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="tools.HerramientaSeleccion"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="tools.Herramienta"/>
+    <fullyQualifiedTypeName name="tools.HerramientaCreacion"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="editor.core.Lienzo"/>
+    <fullyQualifiedTypeName name="figuras.Circulo"/>
+    <fullyQualifiedTypeName name="editor.core.EditorWindow"/>
+    <fullyQualifiedTypeName name="tools.HerramientaRectangulo"/>
+    <fullyQualifiedTypeName name="tools.HerramientaCirculo"/>
+    <fullyQualifiedTypeName name="tools.HerramientaTriangulo"/>
+</qualifiedTypeNameHistroy>

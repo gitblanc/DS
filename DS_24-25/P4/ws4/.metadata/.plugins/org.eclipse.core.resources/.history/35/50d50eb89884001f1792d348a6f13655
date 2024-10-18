@@ -1,0 +1,17 @@
+package formulario.validaciones;
+
+import formulario.Validacion;
+
+public class ComprobarMenorQue implements Validacion {
+
+	public ComprobarMenorQue(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean isValid(String texto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,36 @@
+package figuras;
+
+import editor.core.Lienzo;
+
+public class Triangulo implements Figura {
+
+	// las coordenadas de los tres vértices del triángulo
+	private int x1, y1, x2, y2, x3, y3;
+
+	public Triangulo(Lienzo l) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Triangulo(int x1, int y1, int x2, int y2, int x3, int y3) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void dibujar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean contiene(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void mover(int x, int y) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

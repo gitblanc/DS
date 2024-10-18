@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+/**
+ * 
+ */
+public class AddInstruction implements Instruction {
+	
+	@Override
+	public void execute(Estado estado) {
+		estado.push(estado.pop() + estado.pop());
+		estado.ip++;
+	}
+
+}

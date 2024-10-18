@@ -1,0 +1,40 @@
+package editor.core;
+
+import java.util.*;
+
+import editor.acciones.ActionManager;
+import editor.acciones.CreateFiguraAction;
+
+public class Dibujo {
+
+	private List<Figura> figuras = new ArrayList<>();
+	private ActionManager actionManager = new ActionManager();
+
+	public void addFigura(Figura figura) {
+		figuras.add(figura);
+	}
+
+	public void removeFigura(Figura figura) {
+		figuras.remove(figura);
+		actionManager.ejecutarAction(new CreateFiguraAction(figura, this));
+	}
+
+	public void dibuja() {
+		for (Figura figura : figuras) {
+			figura.dibujar();
+			actionManager.addUndoableAction(new CreateFiguraAction(figura, this));
+		}
+	}
+
+	public Figura getFigura(int x, int y) {
+		for (Figura figura : figuras)
+			if (figura.contiene(x, y))
+				return figura;
+		return null;
+	}
+
+	public ActionManager getActionManager() {
+		return this.actionManager;
+	}
+
+}

@@ -1,0 +1,10 @@
+package tools;
+
+import editor.core.EditorWindow;
+
+public abstract class HerramientaCreacion implements Herramienta {
+
+	EditorWindow editor;
+
+	void crearFigura();
+}

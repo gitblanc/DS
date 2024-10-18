@@ -1,0 +1,17 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class StoreInstruction implements Instruction {
+
+	@Override
+	public void execute(Memoria memoria, Pila pila, Instruction instruction) {
+		int valor = Main.pop();
+		int direccion = Main.pop();
+		memoria.getMemoria(direccion) = valor;
+		ip++;
+	}
+
+}

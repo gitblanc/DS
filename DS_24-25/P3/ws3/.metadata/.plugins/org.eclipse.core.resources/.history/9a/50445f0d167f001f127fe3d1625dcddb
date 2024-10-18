@@ -1,0 +1,17 @@
+package tools;
+
+import editor.core.EditorWindow;
+
+public class HerramientaCirculo implements HerramientaCreacion {
+
+	public HerramientaCirculo(EditorWindow editor) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void crearFigura() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

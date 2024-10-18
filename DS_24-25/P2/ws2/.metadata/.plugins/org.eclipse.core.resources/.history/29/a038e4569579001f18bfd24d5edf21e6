@@ -1,0 +1,14 @@
+package instrucciones;
+
+import main.Estado;
+import main.Main;
+
+public class OutputInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		estado.getConsole().out.println(estado.pop());
+		Main.ip++;
+	}
+
+}

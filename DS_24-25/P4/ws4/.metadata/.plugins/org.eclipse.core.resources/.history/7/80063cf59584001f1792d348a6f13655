@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package formulario.validaciones;
+
+import formulario.Validacion;
+
+/**
+ * 
+ */
+public class Longitud implements Validacion {
+
+}

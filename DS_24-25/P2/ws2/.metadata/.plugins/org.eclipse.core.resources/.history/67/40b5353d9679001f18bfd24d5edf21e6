@@ -1,0 +1,21 @@
+package instrucciones;
+
+import main.Estado;
+
+public class NumberInstruction implements Instruction {
+
+	private int valor;
+
+	public NumberInstruction(String string) {
+		this.valor(Integer.parseInt(string));
+	}
+
+	@Override
+	public void execute(Estado estado) {
+	}
+
+	public int getValor() {
+		return valor;
+	}
+
+}

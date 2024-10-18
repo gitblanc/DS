@@ -1,0 +1,5 @@
+package formulario.operadores;
+
+public class OperadorAnd {
+
+}

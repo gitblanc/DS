@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package formulario.validaciones;
+
+import formulario.Validacion;
+
+/**
+ * 
+ */
+public class CodigoProducto implements Validacion {
+
+	@Override
+	public boolean isValid(String texto) {
+		return texto.length() != 4;
+	}
+
+}

@@ -1,0 +1,22 @@
+package formulario.validaciones;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import formulario.Validacion;
+
+public class ComprobarOR implements Validacion {
+
+	private List<Validacion> validaciones = new ArrayList<>();
+
+	public ComprobarOR(Validacion... comprobarValoresPredefinidos) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean isValid(String texto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

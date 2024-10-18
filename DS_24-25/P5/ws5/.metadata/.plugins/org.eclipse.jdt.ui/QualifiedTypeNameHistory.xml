@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="editor.acciones.ActionManager"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="editor.cambios.HistorialCambios"/>
+    <fullyQualifiedTypeName name="editor.cambios.CreacionCambio"/>
+</qualifiedTypeNameHistroy>

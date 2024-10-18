@@ -1,0 +1,26 @@
+package main;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import editor.core.EditorWindow;
+import tools.Herramienta;
+
+public class Menu {
+	
+	private EditorWindow editor;
+	private Map<String, Herramienta> herramientas = new HashMap<String, Herramienta>();
+	
+	
+	public Menu(EditorWindow editor) {
+		this.editor = editor;
+	}
+
+	public void ejecutar() {
+		
+	}
+
+	public void addHerramienta(String stringTool, Herramienta tool) {
+		
+	}
+}

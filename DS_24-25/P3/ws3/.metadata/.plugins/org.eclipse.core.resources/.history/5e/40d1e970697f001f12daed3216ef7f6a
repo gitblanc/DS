@@ -1,0 +1,23 @@
+package figuras;
+
+public class Triangulo implements Figura {
+
+	@Override
+	public void dibujar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean contiene(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void mover(int x, int y) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

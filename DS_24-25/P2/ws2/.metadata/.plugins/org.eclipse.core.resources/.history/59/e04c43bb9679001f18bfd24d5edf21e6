@@ -1,0 +1,25 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class JmpgInstruction implements Instruction {
+	
+	
+
+	public JmpgInstruction(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void execute(Memoria memoria, Pila pila, Instruction instruction) {
+		int b = Main.pop();
+		int a = Main.pop();
+		if(a > b)
+			Main.ip = Integer.parseInt(instruccion);
+		else
+			Main.ip++;
+	}
+
+}

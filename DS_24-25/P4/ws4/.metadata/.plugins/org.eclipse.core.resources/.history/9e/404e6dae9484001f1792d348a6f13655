@@ -1,0 +1,7 @@
+package formulario.operadores;
+
+import formulario.Campo;
+
+public class OperadorAnd {
+	private Campo campo;
+}

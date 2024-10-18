@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="Temperatura.Temp"/>
+    <fullyQualifiedTypeName name="videoclub.Alquiler"/>
+    <fullyQualifiedTypeName name="peliculas.TipoPelicula"/>
+    <fullyQualifiedTypeName name="peliculas.PeliculaNovedad"/>
+    <fullyQualifiedTypeName name="peliculas.PeliculaInfantil"/>
+    <fullyQualifiedTypeName name="peliculas.PeliculaNormal"/>
+</qualifiedTypeNameHistroy>

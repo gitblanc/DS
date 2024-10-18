@@ -1,0 +1,7 @@
+package instrucciones;
+
+import main.Pila;
+
+public interface Instruction {
+	public void execute(Pila pila, Instruction instruction);
+}

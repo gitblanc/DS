@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package main;
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+public class Estado {
+	public static int ip = 0;
+	private static int[] memoria = new int[1024];
+	private static int[] pila = new int[32];
+	private static int sp = 0;
+	public static Scanner console = new Scanner(System.in);
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package formulario;
+
+/**
+ * 
+ */
+public abstract class CampoAbstracto implements Campo{
+	protected String etiqueta;
+
+}

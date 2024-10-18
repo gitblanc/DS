@@ -1,0 +1,16 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class LoadInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		int direccion = Main.pop();
+		Main.push(memoria.getMemoria(direccion));
+		Main.ip++;
+	}
+
+}

@@ -1,0 +1,37 @@
+package editor.acciones;
+
+import java.util.List;
+import java.util.Stack;
+
+public class ActionManager {
+
+	private Stack<Action> undoableActions = new Stack<>();
+	private Stack<Action> redoableActions = new Stack<>();
+
+	public void undo() {
+
+	}
+
+	public void redo() {
+
+	}
+
+	public List<Action> getUndoableActions() {
+		return undoableActions;
+	}
+
+	public List<Action> getRedoableActions() {
+		return redoableActions;
+	}
+
+	public void addUndoableAction(Action action) {
+		redoableActions.clear();
+		undoableActions.push(action);
+	}
+
+	public void ejecutarAction(CreateFiguraAction createFiguraAction) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package peliculas;
+
+import videoclub.Alquiler;
+
+public class PeliculaNovedad implements TipoPelicula{
+
+	@Override
+	public double getPrecio(Alquiler alquiler) {
+		return alquiler.getDias() * 3;
+	}
+
+	@Override
+	public int getPuntosAlquiler(Alquiler alquiler) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

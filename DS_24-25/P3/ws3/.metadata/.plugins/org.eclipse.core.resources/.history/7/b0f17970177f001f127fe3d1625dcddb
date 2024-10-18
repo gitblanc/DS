@@ -1,0 +1,19 @@
+package editor.core;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import figuras.Figura;
+
+public class Dibujo {
+
+	private List<Figura> figuras = new ArrayList<E>()
+
+	/*
+	 * public addFigura(...) { // TO DO }
+	 */
+
+	public void dibuja() {
+		// Dibujar las figuras que contenga
+	}
+}

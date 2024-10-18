@@ -1,0 +1,22 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class PushInstruction implements Instruction {
+	
+	private int valor = 
+	
+	@Override
+	public void execute(Memoria memoria, Pila pila, Instruction instruction) {
+		Main.push(Integer.parseInt(instruction.valor));
+		Main.ip++;
+	}
+
+	@Override
+	public String getValor() {
+		return "push " + instruccion
+	}
+
+}

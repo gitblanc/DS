@@ -1,0 +1,11 @@
+package main;
+
+public class Memoria {
+	
+	private static int[] memoria;
+
+	public Memoria(int bytes) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

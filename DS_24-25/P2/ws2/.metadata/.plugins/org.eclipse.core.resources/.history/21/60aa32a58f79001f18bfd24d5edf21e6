@@ -1,0 +1,12 @@
+package instrucciones;
+
+import main.Main;
+
+public class PushInstruction implements Instruction {
+
+	@Override
+	public void execute() {
+		Main.push(Integer.parseInt());
+	}
+
+}

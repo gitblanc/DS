@@ -1,0 +1,8 @@
+package instrucciones;
+
+import main.Memoria;
+import main.Pila;
+
+public interface Instruction {
+	public void execute(Memoria memoria, Pila pila, Instruction instruction);
+}

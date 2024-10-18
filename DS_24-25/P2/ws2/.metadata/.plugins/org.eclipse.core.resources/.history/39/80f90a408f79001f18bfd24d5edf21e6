@@ -1,0 +1,139 @@
+package main;
+
+/**
+ * # IMPORTANTE: El código entregado para esta práctica es el mínimo necesario para entender
+ * el ejercicio y NUNCA debería ser tomado como un ejemplo del uso adecuado de excepciones,
+ * asertos y tests. Todo lo anterior, que debería hacerse en un programa real, se ha omitido
+ * a propósito para simplificar el planteamiento del ejercicio.
+ */
+
+import java.io.*;
+import java.util.*;
+
+import instrucciones.*;
+
+public class Main {
+	// private static List<String[]> instrucciones = new ArrayList<>();
+	private static List<Instruction> instrucciones = new ArrayList<Instruction>();
+	private static int ip = 0;
+
+	//private static int[] memoria = new int[1024];
+	private static Memoria memoria = new Memoria(1024);
+
+	//private static int[] pila = new int[32];
+	private static Pila pila = new Pila(32);
+	private static int sp = 0;
+
+	private static Scanner console = new Scanner(System.in);
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader fichero = new BufferedReader(new FileReader("factorial.txt"));
+		// BufferedReader fichero = new BufferedReader(new FileReader("fibonacci.txt"));
+
+		String linea;
+		while ((linea = fichero.readLine()) != null)
+			cargaInstruccion(linea);
+		fichero.close();
+
+		ejecutaPrograma();
+	}
+
+	// $ Cargar programa --------------------------------
+	private static void cargaInstruccion(String linea) {
+		if (linea.trim().length() == 0)
+			return;
+
+		String[] palabras = linea.split(" ");
+		// instrucciones.add(palabras);
+		crearInstruccion(palabras);
+	}
+
+	private static void crearInstruccion(String[] palabras) {
+		for(String palabra : palabras) {
+			if (palabra.equals("push")) {
+				instrucciones.add(new PushInstruction());
+            } else if (palabra.equals("add")) {
+                instrucciones.add(new AddInstruction());
+            } else if (palabra.equals("sub")) {
+            	instrucciones.add(new SubInstruction());
+            } else if (palabra.equals("mul")) {
+            	instrucciones.add(new MulInstruction());
+            } else if (palabra.equals("jmp")) {
+            	instrucciones.add(new JmpInstruction());
+            } else if (palabra.equals("jmpg")) {
+            	instrucciones.add(new JmpgInstruction());
+            } else if (palabra.equals("load")) {
+            	instrucciones.add(new LoadInstruction());
+            } else if (palabra.equals("store")) {
+            	instrucciones.add(new StoreInstruction());
+            } else if (palabra.equals("input")) {
+            	instrucciones.add(new InputInstruction());
+            } else if (palabra.equals("output")) {
+            	instrucciones.add(new OutputInstruction());
+            } else {
+            	instrucciones.add(new NumberInstruction());
+            }
+         
+		}
+	}
+
+	// $ Métodos Auxiliares --------------------------------
+	private static void push(int valor) {
+		pila[sp] = valor;
+		sp++;
+	}
+
+	private static int pop() {
+		sp--;
+		return pila[sp];
+	}
+
+	// $ Motor de Ejecución --------------------------------
+	private static void ejecutaPrograma() {
+        while (ip < instrucciones.size()) {
+            Instruction instruccion = instrucciones.get(ip);
+
+            instruccion.execute(this, instrucciones.get(ip+1));
+//            if (instruccion[0].equals("push")) {
+//                push(Integer.parseInt(instruccion[1]));
+//                ip++;
+//            } else if (instruccion[0].equals("add")) {
+//                push(pop() + pop());
+//                ip++;
+//            } else if (instruccion[0].equals("sub")) {
+//                int b = pop();
+//                int a = pop();
+//                push(a - b);
+//                ip++;
+//            } else if (instruccion[0].equals("mul")) {
+//                push(pop() * pop());
+//                ip++;
+//            } else if (instruccion[0].equals("jmp")) {
+//                ip = Integer.parseInt(instruccion[1]);
+//            } else if (instruccion[0].equals("jmpg")) {
+//                int b = pop();
+//                int a = pop();
+//                if (a > b)
+//                    ip = Integer.parseInt(instruccion[1]);
+//                else
+//                    ip++;
+//            } else if (instruccion[0].equals("load")) {
+//                int direccion = pop();
+//                push(memoria[direccion]);
+//                ip++;
+//            } else if (instruccion[0].equals("store")) {
+//                int valor = pop();
+//                int direccion = pop();
+//                memoria[direccion] = valor;
+//                ip++;
+//            } else if (instruccion[0].equals("input")) {
+//                System.out.println("Escriba un entero:");
+//                push(console.nextInt());
+//                ip++;
+//            } else if (instruccion[0].equals("output")) {
+//                System.out.println(pop());
+//                ip++;
+//            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+package instrucciones;
+
+import main.Main;
+import main.Pila;
+
+public class JmpInstruction implements Instruction {
+
+	@Override
+	public void execute(Pila pila, Instruction instruction) {
+		Main.push(Main.pop() + Main.pop());
+		Main.ip++;
+	}
+
+}

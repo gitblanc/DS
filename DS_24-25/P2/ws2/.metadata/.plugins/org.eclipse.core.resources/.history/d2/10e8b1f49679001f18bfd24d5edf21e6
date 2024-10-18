@@ -1,0 +1,19 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class JmpInstruction implements Instruction {
+	private int valor;
+
+	public JmpInstruction(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void execute(Estado estado) {
+		Main.ip = Integer.parseInt(instruction);
+	}
+
+}

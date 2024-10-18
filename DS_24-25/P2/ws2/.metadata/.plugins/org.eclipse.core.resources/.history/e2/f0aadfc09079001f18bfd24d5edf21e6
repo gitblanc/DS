@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Main;
+import main.Pila;
+
+/**
+ * 
+ */
+public class SubInstruction implements Instruction {
+
+	@Override
+	public void execute(Pila pila, Instruction instruction) {
+		int b = Main.pop();
+		int a = Main.pop();
+		Main.push(a - b);
+		Main.ip++;
+	}
+
+}

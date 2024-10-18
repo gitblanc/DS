@@ -1,0 +1,7 @@
+package peliculas;
+
+import videoclub.Alquiler;
+
+public interface TipoPelicula {
+	double getPrecio(Alquiler a);
+}

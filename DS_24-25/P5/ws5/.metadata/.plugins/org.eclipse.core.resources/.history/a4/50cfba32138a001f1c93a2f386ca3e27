@@ -1,0 +1,9 @@
+package editor.acciones;
+
+public interface Action {
+
+	void execute();
+
+	void undo();
+
+}

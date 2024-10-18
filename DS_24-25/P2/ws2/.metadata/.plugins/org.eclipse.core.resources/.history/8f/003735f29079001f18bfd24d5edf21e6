@@ -1,0 +1,11 @@
+package instrucciones;
+
+public class StoreInstruction implements Instruction {
+
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

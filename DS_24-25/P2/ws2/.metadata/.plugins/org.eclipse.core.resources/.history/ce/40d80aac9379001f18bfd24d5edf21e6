@@ -1,0 +1,65 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import instrucciones.AddInstruction;
+import instrucciones.InputInstruction;
+import instrucciones.Instruction;
+import instrucciones.JmpInstruction;
+import instrucciones.JmpgInstruction;
+import instrucciones.LoadInstruction;
+import instrucciones.MulInstruction;
+import instrucciones.NumberInstruction;
+import instrucciones.OutputInstruction;
+import instrucciones.PushInstruction;
+import instrucciones.StoreInstruction;
+import instrucciones.SubInstruction;
+
+public class VirtualMachine {
+	private static List<Instruction> instrucciones = new ArrayList<>();
+	public static int ip = 0;
+	private static int[] memoria = new int[1024];
+	private static int sp = 0;
+	public static Scanner console = new Scanner(System.in);
+	
+	// $ Cargar programa --------------------------------
+	public void cargaInstruccion(String linea) {
+		if (linea.trim().length() == 0)
+			return;
+
+		String[] palabras = linea.split(" ");
+		// instrucciones.add(palabras);
+		crearInstruccion(palabras);
+	}
+	
+	private static void crearInstruccion(String[] palabras) {
+		for(String palabra : palabras) {
+			if (palabra.equals("push")) {
+				instrucciones.add(new PushInstruction());
+            } else if (palabra.equals("add")) {
+                instrucciones.add(new AddInstruction());
+            } else if (palabra.equals("sub")) {
+            	instrucciones.add(new SubInstruction());
+            } else if (palabra.equals("mul")) {
+            	instrucciones.add(new MulInstruction());
+            } else if (palabra.equals("jmp")) {
+            	instrucciones.add(new JmpInstruction());
+            } else if (palabra.equals("jmpg")) {
+            	instrucciones.add(new JmpgInstruction());
+            } else if (palabra.equals("load")) {
+            	instrucciones.add(new LoadInstruction());
+            } else if (palabra.equals("store")) {
+            	instrucciones.add(new StoreInstruction());
+            } else if (palabra.equals("input")) {
+            	instrucciones.add(new InputInstruction());
+            } else if (palabra.equals("output")) {
+            	instrucciones.add(new OutputInstruction());
+            } else {
+            	instrucciones.add(new NumberInstruction(Integer.parseInt(palabra)));
+            }
+         
+		}
+	}
+}

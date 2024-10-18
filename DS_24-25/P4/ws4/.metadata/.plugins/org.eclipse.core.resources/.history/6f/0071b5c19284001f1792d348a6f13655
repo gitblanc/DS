@@ -1,0 +1,26 @@
+package formulario.campos;
+
+import formulario.CampoAbstracto;
+
+public class CampoValoresPredefinidos extends CampoAbstracto {
+
+	private String[] valores;
+
+	public CampoValoresPredefinidos(String etiqueta, String... valores) {
+		super(etiqueta);
+		this.valores = valores;
+	}
+
+	@Override
+	protected boolean pideDatoConcreto(boolean valido) {
+		// Comprobar si el texto introducido está entre los valores permitidos
+		for (String valor : valores) {
+			if (texto.equalsIgnoreCase(valor)) {
+				valido = true;
+				break;
+			}
+		}
+
+		return valido;
+	}
+}

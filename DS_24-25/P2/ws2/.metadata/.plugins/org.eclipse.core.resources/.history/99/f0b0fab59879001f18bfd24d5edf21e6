@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Estado;
+
+/**
+ * 
+ */
+public class AddInstruction extends AumentarIpAbstract {
+
+	@Override
+	public void execute(Estado estado) {
+		estado.push(estado.pop() + estado.pop());
+		super.execute(estado);
+	}
+
+}

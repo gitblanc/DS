@@ -1,0 +1,22 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class VirtualMachine {
+	private static List<String[]> instrucciones = new ArrayList<>();
+	public static int ip = 0;
+	private static int[] memoria = new int[1024];
+	private static int sp = 0;
+	public static Scanner console = new Scanner(System.in);
+	
+	public void cargaInstruccion(String linea) {
+		if (linea.trim().length() == 0)
+			return;
+
+		String[] palabras = linea.split(" ");
+		// instrucciones.add(palabras);
+		crearInstruccion(palabras);
+	}
+}

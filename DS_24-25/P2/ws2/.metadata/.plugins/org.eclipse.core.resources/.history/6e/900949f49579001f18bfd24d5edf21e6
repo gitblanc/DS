@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Estado;
+
+/**
+ * 
+ */
+public class SubInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		int b = estado.pop();
+		int a = estado.pop();
+		estado.push(a - b);
+		estado.ip++;
+	}
+
+}

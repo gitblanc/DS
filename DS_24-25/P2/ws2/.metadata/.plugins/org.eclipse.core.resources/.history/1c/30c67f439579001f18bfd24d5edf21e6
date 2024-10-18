@@ -1,0 +1,15 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class OutputInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		System.out.println(Main.pop());
+		Main.ip++;
+	}
+
+}

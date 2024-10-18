@@ -1,0 +1,5 @@
+package editor.acciones;
+
+public class ActionManager {
+
+}

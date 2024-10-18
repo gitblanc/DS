@@ -1,0 +1,39 @@
+package figuras;
+
+import editor.core.Lienzo;
+
+public class Rectangulo implements Figura {
+
+	private int x, y;
+	private int width, height;
+
+	public Rectangulo(int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
+
+	public Rectangulo(Lienzo l) {
+		this(boundingBox.getX(), boundingBox.getY(), boundingBox.getWidth(), boundingBox.getHeight());
+	}
+
+	@Override
+	public void dibujar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean contiene(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void mover(int x, int y) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

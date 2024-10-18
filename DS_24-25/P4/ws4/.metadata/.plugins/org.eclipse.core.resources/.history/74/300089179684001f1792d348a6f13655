@@ -1,0 +1,23 @@
+package formulario.validaciones;
+
+import formulario.Campo;
+
+public class Numero extends Campo {
+
+	public Numero(String etiqueta) {
+		super(etiqueta);
+	}
+
+	@Override
+	protected boolean pideDatoConcreto(boolean valido) {
+		// Comprobar si el texto introducido está formado por dígitos
+		for (char ch : texto.toCharArray()) {
+			if (!Character.isDigit(ch)) {
+				valido = false;
+				break;
+			}
+		}
+
+		return valido;
+	}
+}

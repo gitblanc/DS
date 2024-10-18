@@ -1,0 +1,16 @@
+package formulario.validaciones;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import formulario.Validacion;
+
+public class ComprobarAND {
+
+	private List<Validacion> validaciones = new ArrayList<>();
+
+	public ComprobarAND(Validacion... validaciones) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,40 @@
+/**
+ * @author UO285176
+ *
+ */
+public class Temperatura {
+	
+	enum Temp {CELSIUS, FAHRENHEIT};
+	
+	double grados = 0;
+	Temp t;
+
+	public Temperatura(double grados, Temp t) {
+		this.grados = 0;
+		this.t = t;
+	}
+
+	public double getCelsius() {
+		if(this.t == Temp.CELSIUS)
+			return this.grados;
+		else
+			return (this.grados - 32) / 1.8;
+	}
+
+	public double getFahrenheit() {
+		if(this.t == Temp.FAHRENHEIT)
+			return this.grados;
+		else
+			return this.grados * 1.8 + 32;
+	}
+
+	public void setCelsius(double celsius) {
+		this.grados = celsius;
+		this.t = Temp.CELSIUS;
+	}
+
+	public void setFahrenheit(double fahr) {
+		this.grados = (fahr - 32) / 1.8;
+		this.t = Temp.FAHRENHEIT;
+	}
+}

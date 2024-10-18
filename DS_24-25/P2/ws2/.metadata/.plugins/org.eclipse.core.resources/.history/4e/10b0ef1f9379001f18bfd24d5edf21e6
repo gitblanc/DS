@@ -1,0 +1,6 @@
+package main;
+
+public class VirtualMachine {
+	private static List<String[]> instrucciones = new ArrayList<>();
+	private static int[] memoria = new int[1024];
+}

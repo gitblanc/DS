@@ -1,0 +1,40 @@
+package editor.core;
+
+import java.util.*;
+
+import editor.cambios.HistorialCambios;
+import editor.cambios.CreateFiguraAction;
+
+public class Dibujo {
+
+	private List<Figura> figuras = new ArrayList<>();
+	private HistorialCambios actionManager = new HistorialCambios();
+
+	public void addFigura(Figura figura) {
+		figuras.add(figura);
+	}
+
+	public void removeFigura(Figura figura) {
+		actionManager.ejecutarAction(new CreateFiguraAction(figura, this));
+		figuras.remove(figura);
+	}
+
+	public void dibuja() {
+		for (Figura figura : figuras) {
+			figura.dibujar();
+			actionManager.addCambio(new CreateFiguraAction(figura, this));
+		}
+	}
+
+	public Figura getFigura(int x, int y) {
+		for (Figura figura : figuras)
+			if (figura.contiene(x, y))
+				return figura;
+		return null;
+	}
+
+	public HistorialCambios getActionManager() {
+		return this.actionManager;
+	}
+
+}

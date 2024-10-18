@@ -1,0 +1,30 @@
+package videoclub;
+
+public class Alquiler {
+	private Pelicula pelicula;
+	private int dias;
+
+	public Alquiler(Pelicula pelicula, int dias) {
+		this.pelicula = pelicula;
+		this.dias = dias;
+	}
+
+	public int getDias() {
+		return dias;
+	}
+
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+
+	public double getPrecio() {
+		return pelicula.getPrecioAlquiler();
+	}
+
+	public int getPuntos() {
+		int puntosAlquiler = 1;
+		if ((getPelicula().getCategoria() == Pelicula.NOVEDAD) && getDias() > 1)
+			puntosAlquiler = 2;
+		return puntosAlquiler;
+	}
+}

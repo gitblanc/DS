@@ -1,0 +1,11 @@
+package tools;
+
+public class HerramientaCirculo implements Herramienta {
+
+	@Override
+	public void crearFigura() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

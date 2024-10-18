@@ -1,0 +1,41 @@
+package tools;
+
+import editor.core.EditorWindow;
+import editor.core.Lienzo;
+import figuras.Figura;
+
+public abstract class HerramientaCreacion implements Herramienta {
+
+	protected EditorWindow editor;
+	protected Lienzo lienzo;
+
+	public HerramientaCreacion(EditorWindow editor) {
+		this.editor = editor;
+	}
+
+	@Override
+	public void pinchar(int x, int y) {
+		editor.getDibujo().limpiarSeleccion();
+		lienzo = new Lienzo(x, y);
+	}
+
+	@Override
+	public void mover(int x, int y) {
+		if (lienzo == null) // se movió sin pulsar antes
+			return;
+		lienzo.resizeTo(x, y);
+	}
+
+	@Override
+	public void soltar(int x, int y) {
+		if (lienzo == null) // no se ha movido previamente
+			return;
+		Figura f = crearFigura(lienzo);
+		System.out.println("El lienzo es" + lienzo.toString());
+		editor.getDibujo().addFigura(f);
+		editor.herramientaTerminada();
+		lienzo = null;
+	}
+
+	public abstract Figura crearFigura(Lienzo lienzo);
+}

@@ -1,0 +1,18 @@
+package formulario.validaciones;
+
+import formulario.Validacion;
+
+public class ComprobarEdad implements Validacion {
+
+	private int edad;
+
+	public ComprobarEdad(int e) {
+		this.edad = e;
+	}
+
+	@Override
+	public boolean isValid(String texto) {
+		return Integer.parseInt(texto) < edad;
+	}
+
+}

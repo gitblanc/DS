@@ -1,0 +1,16 @@
+package peliculas;
+
+import videoclub.Alquiler;
+
+public class PeliculaNormal implements TipoPelicula {
+
+	@Override
+	public double getPrecio(Alquiler alquiler) {
+		double precioAlquiler = 0;
+		precioAlquiler += 2;
+		if (alquiler.getDias() > 2)
+			precioAlquiler += (alquiler.getDias() - 2) * 1.5;
+		return precioAlquiler;
+	}
+
+}

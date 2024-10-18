@@ -1,0 +1,18 @@
+package formulario.validaciones;
+
+import formulario.Validacion;
+
+public class ComprobarMayorQue implements Validacion {
+
+	private int edad;
+
+	public ComprobarMayorQue(int e) {
+		this.edad = e;
+	}
+
+	@Override
+	public boolean isValid(String texto) {
+		return Integer.parseInt(texto) < edad;
+	}
+
+}

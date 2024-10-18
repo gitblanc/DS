@@ -1,0 +1,29 @@
+package instrucciones;
+
+import main.Estado;
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class PushInstruction implements Instruction {
+	
+	private int valor;
+	
+	public PushInstruction(String string) {
+		setValor(Integer.parseInt(string));
+	}
+
+	@Override
+	public void execute(Estado estado) {
+		Main.push(Integer.parseInt(instruction.valor));
+		Main.ip++;
+	}
+
+	public int getValor() {
+		return valor;
+	}
+
+	public void setValor(int valor) {
+		this.valor = valor;
+	}
+}

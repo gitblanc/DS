@@ -1,0 +1,8 @@
+package figuras;
+
+import editor.core.EditorWindow;
+
+public class Rectangulo implements Figura {
+
+
+}

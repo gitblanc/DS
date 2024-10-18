@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package formulario.validaciones;
+
+import formulario.Campo;
+
+/**
+ * 
+ */
+public class CodigoProducto extends Campo {
+
+	public CodigoProducto(String etiqueta) {
+		super(etiqueta);
+	}
+
+	@Override
+	protected boolean pideDatoConcreto(boolean valido) {
+		if (super.texto.length() != 4)
+			valido = false;
+		return valido;
+	}
+
+}

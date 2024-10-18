@@ -1,0 +1,17 @@
+package main;
+
+import editor.core.EditorWindow;
+
+public class Menu {
+	
+	private EditorWindow editor;
+	
+	
+	public Menu(EditorWindow editor) {
+		this.editor = editor;
+	}
+
+	public void ejecutar() {
+		
+	}
+}

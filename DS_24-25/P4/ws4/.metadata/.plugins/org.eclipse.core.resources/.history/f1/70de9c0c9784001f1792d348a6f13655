@@ -1,0 +1,31 @@
+package main;
+
+import formulario.Campo;
+import formulario.Formulario;
+import formulario.validaciones.ComprobarLongitud;
+import formulario.validaciones.ComprobarNumero;
+import formulario.validaciones.ComprobarTexto;
+import formulario.validaciones.ComprobarValoresPredefinidos;
+
+/**
+ * IMPORTANTE: El código entregado para esta práctica es el mínimo necesario
+ * para entender el ejercicio y NUNCA debería ser tomado como un ejemplo del uso
+ * adecuado de excepciones, asertos y tests. Todos los elementos anteriores, que
+ * deberían hacerse en un programa real, se han omitido a propósito para
+ * simplificar el planteamiento del ejercicio.
+ */
+
+public class Main {
+
+	public static void main(String[] args) {
+		Formulario formulario = new Formulario();
+
+		formulario.addCampo(new Campo("Nombre", new ComprobarTexto()));
+		formulario.addCampo(new Campo("Apellido", new ComprobarTexto()));
+		formulario.addCampo(new Campo("Teléfono", new ComprobarNumero()));
+		formulario.addCampo(new Campo("Ciudad", new ComprobarValoresPredefinidos("Santander", "Oviedo", "Cádiz")));
+		formulario.addCampo(new Campo("Código de Producto", new ComprobarLongitud(5));
+
+		formulario.pideDatos();
+	}
+}

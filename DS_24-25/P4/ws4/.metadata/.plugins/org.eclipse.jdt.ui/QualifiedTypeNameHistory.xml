@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="formulario.CampoAbstracto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="formulario.Validacion"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="formulario.validaciones.ComprobarAND"/>
+    <fullyQualifiedTypeName name="formulario.validaciones.ComprobarNumero"/>
+    <fullyQualifiedTypeName name="formulario.validaciones.ComprobarLongitud"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,13 @@
+package instrucciones;
+
+import main.Estado;
+
+public class MulInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		estado.push(estado.pop() * estado.pop());
+		estado.setIp(estado.getIp() + 1);
+	}
+
+}

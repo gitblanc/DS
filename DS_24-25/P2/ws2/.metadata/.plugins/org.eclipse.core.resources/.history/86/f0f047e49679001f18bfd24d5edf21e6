@@ -1,0 +1,24 @@
+package instrucciones;
+
+import main.Estado;
+import main.Main;
+
+public class JmpgInstruction implements Instruction {
+
+	private int valor;
+
+	public JmpgInstruction(String string) {
+		this.valor = Integer.parseInt(string);
+	}
+
+	@Override
+	public void execute(Estado estado) {
+		int b = estado.pop();
+		int a = estado.pop();
+		if (a > b)
+			Main.ip = Integer.parseInt(instruccion);
+		else
+			Main.ip++;
+	}
+
+}

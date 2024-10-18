@@ -1,0 +1,27 @@
+package editor.acciones;
+
+import java.util.List;
+import java.util.Stack;
+
+public class ActionManager {
+
+	private List<Action> undoableActions = new Stack<>();
+	private List<Action> redoableActions = new Stack<>();
+
+	public void undo() {
+		
+	}
+
+	public void redo() {
+		
+	}
+
+	public List<Action> getUndoableActions() {
+		return undoableActions;
+	}
+
+	public List<Action> getRedoableActions() {
+		return redoableActions;
+	}
+
+}

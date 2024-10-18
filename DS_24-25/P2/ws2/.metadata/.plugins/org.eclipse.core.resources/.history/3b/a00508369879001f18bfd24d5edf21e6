@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Estado;
+
+/**
+ * 
+ */
+public class AddInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		estado.push(estado.pop() + estado.pop());
+		estado.setIp(estado.getIp() + 1);
+	}
+
+}

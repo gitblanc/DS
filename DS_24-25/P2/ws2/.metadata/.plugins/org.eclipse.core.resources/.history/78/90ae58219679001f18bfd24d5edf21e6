@@ -1,0 +1,18 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class NumberInstruction implements Instruction {
+
+	public NumberInstruction(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void execute(Estado estado) {
+		this.valor = Integer.parseInt(instruction.getValor());
+	}
+
+}

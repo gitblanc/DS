@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Estado;
+
+/**
+ * 
+ */
+public abstract class AbstractInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

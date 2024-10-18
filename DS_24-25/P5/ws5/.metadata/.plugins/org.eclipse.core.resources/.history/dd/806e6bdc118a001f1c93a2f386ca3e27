@@ -1,0 +1,93 @@
+package editor.core;
+
+import java.util.*;
+
+import editor.acciones.ActionManager;
+import editor.herramientas.HerramientaSeleccion;
+import figuras.circulo.HerramientaCirculo;
+import figuras.rectangulo.HerramientaRectangulo;
+import figuras.triangulo.HerramientaTriangulo;
+
+public class EditorWindow {
+
+    private Dibujo dibujo;
+    private Map<String, Herramienta> herramientas;
+    private Herramienta herramientaActual;
+    private Herramienta seleccion;
+
+    public EditorWindow() {
+        dibujo = new Dibujo();
+
+        herramientas = new HashMap<>();
+        doCreaHerramientas(herramientas);
+        herramientaActual = seleccion = herramientas.get("seleccion");
+        actionManager = new ActionManager();
+    }
+
+    protected void doCreaHerramientas(Map<String, Herramienta> herramientas) {
+        herramientas.put("rectangulo", new HerramientaRectangulo(this));
+        herramientas.put("circulo", new HerramientaCirculo(this));
+        herramientas.put("triangulo", new HerramientaTriangulo(this));
+        herramientas.put("seleccion", new HerramientaSeleccion(this));
+    }
+
+    //$ Métodos del Interfaz de Usuario -----------------------------
+
+    public void toolButtonClicked(String nombre) {
+        setHerramientaActual(herramientas.get(nombre));
+    }
+
+    public void mousePressed(int x, int y) {
+        herramientaActual.mousePressed(x, y);
+    }
+
+    public void mouseMoved(int x, int y) {
+        herramientaActual.mouseMoved(x, y);
+    }
+
+    public void mouseReleased(int x, int y) {
+        herramientaActual.mouseReleased(x, y);
+    }
+
+    //$ Métodos de Herramientas ---------------------
+
+    private void setHerramientaActual(Herramienta herramienta) {
+        this.herramientaActual = herramienta;
+    }
+
+    public void finHerramienta() {
+        herramientaActual = seleccion;
+    }
+
+    //$ Métodos del dibujo -----------------------------
+
+    public Dibujo getDibujo() {
+        return dibujo;
+    }
+
+    public void dibuja() {
+
+        // Se dibuja el menú
+        // Se dibuja la barra de herramientas lateral
+        // Se dibuja la línea de estado
+
+        dibujo.dibuja();
+
+        System.out.println("  [" + herramientaActual.getClass().getSimpleName() + " activada]");
+        System.out.println();
+    }
+
+	public void undo() {
+		actionManager.undo();
+	}
+
+	public void redo() {
+		actionManager.redo();
+	}
+	
+	private ActionManager getActionManager()
+	{
+		return this.dibujo.getActionManager();
+	}
+
+}

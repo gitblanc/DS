@@ -1,0 +1,35 @@
+package figuras;
+
+import editor.core.Lienzo;
+
+public class Circulo implements Figura {
+
+	private int x, y; // coordenadas del centro
+	private int radio;
+
+	public Circulo(Lienzo lienzo) {
+		int size = Math.max(lienzo.getWidth(), lienzo.getHeight());
+		this.x = lienzo.getX() + (size / 2);
+		this.y = lienzo.getY() + (size / 2);
+		this.radio = size / 2;
+	}
+
+	@Override
+	public void dibujar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean contiene(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void mover(int x, int y) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

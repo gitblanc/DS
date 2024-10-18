@@ -1,0 +1,19 @@
+package main;
+
+public class Memoria {
+	
+	private int[] memoria;
+
+	public Memoria(int bytes) {
+		this.memoria = new int[bytes];
+	}
+
+	public int getMemoria(int direccion) {
+		return memoria[direccion];
+	}
+
+	public void setMemoria(int direccion, int valor) {
+		// TODO Auto-generated method stub
+		
+	}
+}

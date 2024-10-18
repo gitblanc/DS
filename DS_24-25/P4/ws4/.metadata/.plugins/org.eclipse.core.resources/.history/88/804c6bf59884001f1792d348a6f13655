@@ -1,0 +1,13 @@
+package formulario.validaciones;
+
+import formulario.Validacion;
+
+public class ComprobarOR implements Validacion {
+
+	@Override
+	public boolean isValid(String texto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

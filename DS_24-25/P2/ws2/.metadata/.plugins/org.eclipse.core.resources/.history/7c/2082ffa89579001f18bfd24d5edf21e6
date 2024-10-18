@@ -1,0 +1,16 @@
+package instrucciones;
+
+import main.Estado;
+import main.Main;
+
+public class StoreInstruction implements Instruction {
+
+	@Override
+	public void execute(Estado estado) {
+		int valor = Main.pop();
+		int direccion = Main.pop();
+		memoria.setMemoria(direccion, valor);
+		Main.ip++;
+	}
+
+}

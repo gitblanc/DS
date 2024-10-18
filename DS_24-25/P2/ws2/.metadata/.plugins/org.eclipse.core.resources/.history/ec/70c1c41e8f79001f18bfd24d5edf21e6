@@ -1,0 +1,14 @@
+package main;
+
+public class Pila {
+	
+	private int[] pila;
+
+	public Pila(int i) {
+		this.pila = new int[i];
+	}
+	
+	public static int[] getPila() {
+		return pila;
+	}
+}

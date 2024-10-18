@@ -1,0 +1,31 @@
+package formulario.validaciones;
+
+import formulario.Campo;
+import formulario.Validacion;
+
+public class ComprobarValoresPredefinidos implements Validacion {
+
+	private String[] valores;
+
+	public ComprobarValoresPredefinidos(String etiqueta, String... valores) {
+		super(etiqueta);
+		this.valores = valores;
+	}
+
+	@Override
+	protected boolean pideDatoConcreto(boolean valido) {
+
+	}
+
+	@Override
+	public boolean isValid(String texto) {
+		// Comprobar si el texto introducido está entre los valores permitidos
+		for (String valor : valores) {
+			if (texto.equalsIgnoreCase(valor)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+}

@@ -1,0 +1,20 @@
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+public class NumberInstruction implements Instruction {
+	
+	private int valor;
+
+	public NumberInstruction(String string) {
+		this.valor = Integer.parseInt(string);
+	}
+
+	@Override
+	public void execute(Estado estado) {
+		this.valor = Integer.parseInt(instruction.getValor());
+	}
+
+}

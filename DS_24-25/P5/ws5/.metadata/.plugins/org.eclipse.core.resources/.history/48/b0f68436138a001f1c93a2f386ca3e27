@@ -1,0 +1,26 @@
+package editor.ambios;
+
+import editor.core.Dibujo;
+import editor.core.Figura;
+
+public class CreateFiguraAction implements Action {
+	
+	private Figura figura;
+	private Dibujo dibujo;
+
+	public CreateFiguraAction(Figura figura, Dibujo dibujo) {
+		this.figura = figura;
+		this.dibujo = dibujo;
+	}
+
+	@Override
+	public void execute() {
+		this.dibujo.addFigura(figura);
+	}
+
+	@Override
+	public void undo() {
+		this.dibujo.removeFigura(figura);
+	}
+
+}

@@ -1,0 +1,55 @@
+package formulario.campos;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import formulario.CampoAbstracto;
+
+public class CampoValoresPredefinidos extends CampoAbstracto {
+
+	private String etiqueta;
+	private String[] valores;
+
+	public CampoValoresPredefinidos(String etiqueta, String... valores) {
+		super(etiqueta);
+		this.valores = valores;
+	}
+
+	public void pideDato() {
+		BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
+
+		boolean valido;
+		do {
+			valido = false;
+			try {
+				System.out.print(etiqueta + ": ");
+				texto = consola.readLine();
+
+				// Comprobar si el texto introducido está entre los valores permitidos
+				for (String valor : valores) {
+					if (texto.equalsIgnoreCase(valor)) {
+						valido = true;
+						break;
+					}
+				}
+
+			} catch (IOException ex) {
+				System.out.println(ex);
+			}
+
+		} while (!valido);
+	}
+
+	public String getDato() {
+		return texto;
+	}
+
+	private String texto;
+
+	@Override
+	protected boolean pideDatoConcreto(boolean valido) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

@@ -1,0 +1,16 @@
+package main;
+
+import editor.core.EditorWindow;
+
+public class Menu {
+	
+	
+	
+	public Menu(EditorWindow editor) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void ejecutar() {
+		
+	}
+}

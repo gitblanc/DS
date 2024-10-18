@@ -1,0 +1,39 @@
+package videoclub;
+
+public class Alquiler {
+    private Pelicula pelicula;
+    private int dias;
+
+    public Alquiler(Pelicula pelicula, int dias) {
+        this.pelicula = pelicula;
+        this.dias = dias;
+    }
+
+    public int getDias() {
+        return dias;
+    }
+
+    public Pelicula getPelicula() {
+        return pelicula;
+    }
+
+	public void getPrecio() {
+		double precioAlquiler = 0;
+		switch (alquiler.getPelicula().getCategoria()) {
+		    case Pelicula.NOVEDAD:
+		        precioAlquiler += alquiler.getDias() * 3;
+		        break;
+		    case Pelicula.NORMAL:
+		        precioAlquiler += 2;
+		        if (alquiler.getDias() > 2)
+		            precioAlquiler += (alquiler.getDias() - 2) * 1.5;
+		        break;
+		    case Pelicula.INFANTIL:
+		        precioAlquiler += 1.5;
+		        if (alquiler.getDias() > 3)
+		            precioAlquiler += (alquiler.getDias() - 3) * 1.5;
+		        break;
+		}
+		return precioAlquiler;
+	}
+}

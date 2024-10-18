@@ -1,0 +1,42 @@
+package main;
+
+/**
+ * # IMPORTANTE: El código entregado para esta práctica es el mínimo necesario para entender
+ * el ejercicio y NUNCA debería ser tomado como un ejemplo del uso adecuado de excepciones,
+ * asertos y tests. Todo lo anterior, que debería hacerse en un programa real, se ha omitido
+ * a propósito para simplificar el planteamiento del ejercicio.
+ */
+
+import java.io.*;
+import java.util.*;
+
+import instrucciones.*;
+
+public class Main {
+//	// private static List<String[]> instrucciones = new ArrayList<>();
+//	private static List<Instruction> instrucciones = new ArrayList<Instruction>();
+//	public static int ip = 0;
+//
+//	//private static int[] memoria = new int[1024];
+//	private static Memoria memoria = new Memoria(1024);
+//
+//	//private static int[] pila = new int[32];
+//	private static Pila pila = new Pila(32);
+//	private static int sp = 0;
+//
+//	public static Scanner console = new Scanner(System.in);
+
+	public static VirtualMachine vm = new VirtualMachine();
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader fichero = new BufferedReader(new FileReader("factorial.txt"));
+		// BufferedReader fichero = new BufferedReader(new FileReader("fibonacci.txt"));
+
+		String linea;
+		while ((linea = fichero.readLine()) != null)
+			vm.cargaInstruccion(linea);
+		fichero.close();
+
+		vm.ejecutaPrograma();
+	}
+}

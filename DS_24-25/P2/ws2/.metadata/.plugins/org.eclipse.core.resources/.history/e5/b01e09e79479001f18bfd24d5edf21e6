@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Main;
+import main.Memoria;
+import main.Pila;
+
+/**
+ * 
+ */
+public class AddInstruction implements Instruction {
+	
+	@Override
+	public void execute(Memoria memoria, Pila pila, Instruction instruction) {
+		Main.push(Main.pop() + Main.pop());
+		Main.ip++;
+	}
+
+}

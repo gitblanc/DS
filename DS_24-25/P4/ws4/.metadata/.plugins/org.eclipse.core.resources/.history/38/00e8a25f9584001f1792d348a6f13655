@@ -1,0 +1,21 @@
+package validaciones;
+
+import formulario.Campo;
+
+public class CampoTexto extends Campo {
+	public CampoTexto(String etiqueta) {
+		super(etiqueta);
+	}
+
+	@Override
+	protected boolean pideDatoConcreto(boolean valido) {
+		// Comprobar si el texto introducido está formado por letras
+		for (char ch : super.texto.toCharArray()) {
+			if (!Character.isLetter(ch)) {
+				valido = false;
+				break;
+			}
+		}
+		return valido;
+	}
+}

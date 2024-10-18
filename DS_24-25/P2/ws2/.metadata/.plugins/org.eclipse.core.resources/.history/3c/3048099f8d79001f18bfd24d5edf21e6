@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package main;
+
+import instrucciones.Instruction;
+
+/**
+ * 
+ */
+public class SubInstruction implements Instruction {
+
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

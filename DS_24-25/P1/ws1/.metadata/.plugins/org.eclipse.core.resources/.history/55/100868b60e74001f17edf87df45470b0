@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author UO285176
+ *
+ */
+public class Temperatura {
+	int grados = 0;
+	public Temperatura(int grados)
+}

@@ -1,0 +1,11 @@
+package formulario.validaciones;
+
+import formulario.Validacion;
+
+public class ComprobarAND {
+
+	public ComprobarAND(Validacion... validaciones) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

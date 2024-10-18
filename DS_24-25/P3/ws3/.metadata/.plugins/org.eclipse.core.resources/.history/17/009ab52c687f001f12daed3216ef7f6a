@@ -1,0 +1,16 @@
+package tools;
+
+import editor.core.EditorWindow;
+
+public class HerramientaCirculo extends HerramientaCreacion {
+
+	public HerramientaCirculo(EditorWindow editor) {
+		super(editor);
+	}
+
+	@Override
+	public Figura crearFigura() {
+
+	}
+
+}

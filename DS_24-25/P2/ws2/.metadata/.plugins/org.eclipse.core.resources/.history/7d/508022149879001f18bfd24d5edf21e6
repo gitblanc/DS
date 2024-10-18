@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package instrucciones;
+
+import main.Estado;
+
+/**
+ * 
+ */
+public abstract class AumentarIpAbstract implements Instruction {
+
+	private Estado e;
+
+	@Override
+	public void execute(Estado estado) {
+		this.e = estado;
+	}
+
+	public void aumentarRegistroIp() {
+		this.e.setIp(this.e.getIp() + 1);
+	}
+
+}

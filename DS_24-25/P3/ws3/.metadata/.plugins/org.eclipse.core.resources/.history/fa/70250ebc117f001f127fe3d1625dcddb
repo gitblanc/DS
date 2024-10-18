@@ -1,0 +1,13 @@
+package tools;
+
+public class HerramientaRectangulo implements Herramienta {
+	
+	
+
+	@Override
+	public void crearFigura() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

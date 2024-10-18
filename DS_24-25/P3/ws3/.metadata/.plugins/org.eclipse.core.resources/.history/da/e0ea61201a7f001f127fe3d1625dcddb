@@ -1,0 +1,12 @@
+package editor.core;
+
+public class Lienzo {
+	private int inicialX, inicialY;
+	private int x1, y1; // esquina superior izquierda
+	private int x2, y2; // esquina inferior derecha
+
+	public Lienzo(int x, int y) {
+		this.inicialX = x1 = x2 = x;
+		this.inicialY = y1 = y2 = y;
+	}
+}

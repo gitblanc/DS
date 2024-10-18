@@ -1,0 +1,22 @@
+package main;
+
+import editor.core.EditorWindow;
+import tools.Herramienta;
+
+public class Menu {
+	
+	private EditorWindow editor;
+	
+	
+	public Menu(EditorWindow editor) {
+		this.editor = editor;
+	}
+
+	public void ejecutar() {
+		
+	}
+
+	public void addHerramienta(String stringTool, Herramienta tool) {
+		
+	}
+}

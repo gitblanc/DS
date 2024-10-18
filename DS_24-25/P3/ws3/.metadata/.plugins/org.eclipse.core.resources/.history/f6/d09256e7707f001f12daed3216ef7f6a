@@ -1,0 +1,68 @@
+package editor.core;
+
+import tools.*;
+
+public class EditorWindow {
+
+	private Dibujo dibujo;
+
+	private HerramientaSeleccion herramientaSeleccion;
+	private Herramienta herramientaActual;
+
+	public EditorWindow() {
+		dibujo = new Dibujo();
+		herramientaActual = herramientaSeleccion = new HerramientaSeleccion(this);
+	}
+
+	public void dibuja() {
+
+		// Se dibuja el menú
+		// Se dibuja la barra de herramientas lateral
+		// Se dibuja la línea de estado
+
+		dibujo.dibuja();
+	}
+
+	// $ Métodos del Interfaz de Usuario -----------------------------
+
+	// Se pinchar el botón de una herramienta para activarla
+	public void toolButtonClicked(Herramienta tool) {
+		setHerramientaActual(tool);
+	}
+
+	public void mousePressed(int x, int y) {
+		this.herramientaActual.pinchar(x, y);
+	}
+
+	public void mouseMoved(int x, int y) {
+		this.herramientaActual.mover(x, y);
+	}
+
+	public void mouseReleased(int x, int y) {
+		this.herramientaActual.soltar(x, y);
+	}
+
+	// $ Métodos del dibujo -----------------------------
+
+	public Dibujo getDibujo() {
+		return dibujo;
+	}
+
+	public Herramienta getDefaultHerramienta() {
+		return herramientaSeleccion;
+	}
+
+	public Herramienta getHerramientaActual() {
+		return this.herramientaActual;
+	}
+
+	private void setHerramientaActual(Herramienta herramienta) {
+		this.herramientaActual.unselect();
+		this.herramientaActual = herramienta;
+	}
+
+	public void herramientaTerminada() {
+		setHerramientaActual(herramientaSeleccion);
+	}
+
+}

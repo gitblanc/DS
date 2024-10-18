@@ -1,0 +1,46 @@
+package formulario.campos;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import formulario.CampoAbstracto;
+
+public class CampoNumero extends CampoAbstracto {
+
+	private String etiqueta;
+
+	public CampoNumero(String etiqueta) {
+		super(etiqueta);
+	}
+
+	public void pideDato() {
+		BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
+
+		boolean valido;
+		do {
+			valido = true;
+			try {
+				System.out.print(etiqueta + ": ");
+				texto = consola.readLine();
+
+			} catch (IOException ex) {
+				System.out.println(ex);
+			}
+
+		} while (!valido);
+	}
+
+	@Override
+	protected boolean pideDatoConcreto(boolean valido) {
+		// Comprobar si el texto introducido está formado por dígitos
+		for (char ch : texto.toCharArray()) {
+			if (!Character.isDigit(ch)) {
+				valido = false;
+				break;
+			}
+		}
+
+		return valido;
+	}
+}
