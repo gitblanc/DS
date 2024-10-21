@@ -1,48 +1,56 @@
 package formulario;
 
-import java.io.*;
-
-import model.Monumento;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /* Formulario básico para usar cuando se quieran pedir solo dos valores sobre algo */
 public class MiniFormulario {
 
-    public void editar(Monumento monumento) {
+	public void editar(Editable editable) {
 
-        System.out.println("Editando Monumento.");
+		System.out.println("Editando " + editable.toString() + ".");
 
-        System.out.println("Valores actuales:");
-        imprimeMonumento(monumento);
+		System.out.println("Valores actuales:");
+		// imprimeMonumento(monumento);
+		imprimeEditable(editable);
 
-        System.out.println("Escriba nuevos valores (dejar en blanco para dejar el valor actual):");
-        System.out.print("- Autor: ");
-        String texto = getLínea();
-        if (texto.length() > 0)
-            monumento.setAutor(texto);
+		System.out.println("Escriba nuevos valores (dejar en blanco para dejar el valor actual):");
+		System.out.println(editable.getValor1Label());
+		String texto = getLínea();
+		if (texto.length() > 0)
+			// monumento.setAutor(texto);
+			editable.setValor1(texto);
 
-        System.out.print("- Dirección: ");
-        texto = getLínea();
-        if (texto.length() > 0)
-            monumento.setDirección(texto);
+		System.out.println(editable.getValor2Label());
+		texto = getLínea();
+		if (texto.length() > 0)
+			// monumento.setDirección(texto);
+			editable.setValor2(texto);
 
-        System.out.println("Valores finales:");
-        imprimeMonumento(monumento);
-    }
+		System.out.println("Valores finales:");
+		// imprimeMonumento(monumento);
+		imprimeEditable(editable);
+	}
 
-    private void imprimeMonumento(Monumento monumento) {
-        System.out.println("- Autor = " + monumento.getAutor());
-        System.out.println("- Dirección = " + monumento.getDirección());
-    }
+	private void imprimeEditable(Editable editable) {
+		editable.imprimeValoresModificables();
+	}
 
-    private String getLínea() {
-        do {
-            try {
-                return consola.readLine();
-            } catch (IOException ex) {
-                System.out.println("Error de lectura. Inténtelo de nuevo.");
-            }
-        } while (true);
-    }
+//	private void imprimeMonumento(Monumento monumento) {
+//		System.out.println("- Autor = " + monumento.getAutor());
+//		System.out.println("- Dirección = " + monumento.getDirección());
+//	}
 
-    BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
+	private String getLínea() {
+		do {
+			try {
+				return consola.readLine();
+			} catch (IOException ex) {
+				System.out.println("Error de lectura. Inténtelo de nuevo.");
+			}
+		} while (true);
+	}
+
+	BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
 }
