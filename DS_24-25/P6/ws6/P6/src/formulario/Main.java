@@ -17,7 +17,10 @@ public class Main {
 		Foto foto = new Foto("Raúl", "Un perro mordiendo a un turista", new Coordenadas(40, 40));
 
 		MiniFormulario formulario = new MiniFormulario();
-		formulario.editar(new MonumentoMarcador(monumento));
+		formulario.editar(new MonumentoMarcador(monumento)); // ESTA MAL: HABRIA QUE SEPARARLO, ES DECIR, DOS ADAPTADORES ->
+																// MonumentoMarcador y MonumentoMarcadorEditable, donde
+																// el segundo sólo implementa los métodos de la interfaz
+																// Editable
 
 		// Tarea 1. Editar también restaurante. Que se puedan editar el nombre y la
 		// dirección del mismo.
