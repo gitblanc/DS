@@ -98,6 +98,9 @@ public class Main {
 		// mismo fichero se va a mandar tanto por Internet como por Bluetooth, se
 		// encripte solo una vez para ganar tiempo.
 		System.out.println("MODIFICACIÓN 5");
+
+		// Esto es un Composite, porque el filtro de Encriptar sólo sabe que le está
+		// pasando el resultado a un objeto, cuando en realidad es a muchos
 		fs.copy("privado.txt", new FiltroEncriptar(
 				new FiltroEnvioMultiple(new InternetOutput("1.1.1.1"), new BluetoothOutput("iPhone"))));
 
