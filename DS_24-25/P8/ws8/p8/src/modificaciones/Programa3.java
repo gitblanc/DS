@@ -24,7 +24,7 @@ public class Programa3 {
 		Encuesta encuesta = new Encuesta("¿Está a favor de la energia nuclear?");
 
 		encuesta.addObservador(new LineaEstadoObserver());
-		encuesta.addObservador(new MinimoVotosObserver(3, new GraficoCircularObserver()));
+		encuesta.addObservador(new MinimoVotosObserver(3, new GraficoCircularObserver())); // Patrón Decorator
 
 		TextUserInterface userInterface = new TextUserInterface();
 		userInterface.rellena(encuesta);
