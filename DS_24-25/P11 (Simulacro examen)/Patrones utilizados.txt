@@ -1,0 +1,19 @@
+Para la primera parte (abrir, insertar, borrar, reemplazar y refactorización del código)
+
+Patrón utilizado: Command
+Participantes
+-------------
+1) Invoker: ActionManager
+2) interfaz Command: Action 
+3) Comandos concretos: Abrir, Insertar, Borrar, Reemplazar, Macro
+4) Receiver: Editor
+5) Cliente: Editor (es el que hace los new ...)
+6) Invoker: ActionManager
+
+Patrón utilizado: Composite
+Participantes
+-------------
+1) interfaz Componente: Action
+2) Hoja:  Abrir, Insertar, Borrar, Reemplazar
+3) Composite: Macro
+
