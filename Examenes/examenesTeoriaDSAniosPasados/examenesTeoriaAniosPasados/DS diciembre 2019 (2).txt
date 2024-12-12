@@ -1,0 +1,4 @@
+-(3pts)*plantea el problema del mapa con monumentos/fotos/restaurantes*. Diseña un UML que solucione el problema, di el patron, los participantes, resuelve el codigo para que funcione en el main y di que otras soluciones tenia y porque no las escogiste
+-(3pts)pon un ejemplo de abstract factory, dibuja uml y di que resuelve esto. vuelve a hacerlo todo pero aplicando prototype
+-(2,5pts)Pon un ejemplo de problema que se beneficiaria de strategy (con codigo), dibuja UML y di que resuelve. 
+-(1,5pts)Define el principio Abierto-cerrado y `pon un ejemplo. di un patron que lo ejemplifique y porque
