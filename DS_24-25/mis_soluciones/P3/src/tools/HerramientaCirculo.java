@@ -1,0 +1,23 @@
+package tools;
+
+import editor.core.EditorWindow;
+import editor.core.Lienzo;
+import figuras.Circulo;
+import figuras.Figura;
+
+public class HerramientaCirculo extends HerramientaCreacion {
+
+	public HerramientaCirculo(EditorWindow editor) {
+		super(editor);
+	}
+
+	@Override
+	public Figura crearFigura(Lienzo l) {
+		return new Circulo(lienzo);
+	}
+
+	@Override
+	public String toString() {
+		return "Herramienta de creación de círculo";
+	}
+}
