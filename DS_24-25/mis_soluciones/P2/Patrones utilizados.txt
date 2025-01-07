@@ -1,0 +1,15 @@
+Patrones utilizados
+
+Patrón utilizado: State
+Participantes
+-------------
+1) Contexto: MaquinaVirtual
+2) State: interfaz Estado
+3) Cliente: Main
+4) Estados Concretos: Jmpg, Jmp, AumentarIp (clase abstracta responsable del Template Method)
+
+Patrón utilizado: Template Method
+Participantes
+-------------
+1) AbstractClass: AumentarIp
+2) ConcreteClass: Add, Mul, Push, Sub, Input, Output, Store, Load

@@ -1,0 +1,9 @@
+Patrones utilizados
+
+Patrón utilizado: Strategy
+Participantes
+-------------
+1) Contexto: Pelicula
+2) Strategy: interfaz Categoria
+3) Cliente: Cliente
+4) Estrategias Concretas: Infantil, Novedad, Normal

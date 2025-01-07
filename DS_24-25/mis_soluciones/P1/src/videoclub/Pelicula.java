@@ -1,27 +1,27 @@
 package videoclub;
 
+import videoclub.categorias.Categoria;
+
 public class Pelicula {
-    private String titulo;
-    private int categoria;
 
-    public static final int NORMAL = 0;
-    public static final int NOVEDAD = 1;
-    public static final int INFANTIL = 2;
+	private String titulo;
+	private Categoria categoria;
 
-    public Pelicula(String titulo, int categoria) {
-        this.titulo = titulo;
-        this.categoria = categoria;
-    }
+	public Pelicula(String t, Categoria c) {
+		this.titulo = t;
+		this.categoria = c;
+	}
 
-    public int getCategoria() {
-        return categoria;
-    }
+	public String getTitulo() {
+		return this.titulo;
+	}
 
-    public void setCategoria(int categoria) {
-        this.categoria = categoria;
-    }
+	public double getPrecio(Alquiler alquiler) {
+		return categoria.getPrecio(alquiler);
+	}
 
-    public String getTitulo() {
-        return titulo;
-    }
+	public int getPuntos(Alquiler alquiler) {
+		return categoria.getPuntos(alquiler);
+	}
+
 }

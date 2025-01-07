@@ -6,98 +6,22 @@ package main;
  * asertos y tests. Todo lo anterior, que debería hacerse en un programa real, se ha omitido
  * a propósito para simplificar el planteamiento del ejercicio.
  */
-
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class Main {
-    private static List<String[]> instrucciones = new ArrayList<>();
-    private static int ip = 0;
+	private static MaquinaVirtual vm = new MaquinaVirtual();
 
-    private static int[] memoria = new int[1024];
+	public static void main(String[] args) throws Exception {
+		BufferedReader fichero = new BufferedReader(new FileReader("factorial.txt"));
+		// BufferedReader fichero = new BufferedReader(new FileReader("fibonacci.txt"));
 
-    private static int[] pila = new int[32];
-    private static int sp = 0;
+		String linea;
+		while ((linea = fichero.readLine()) != null)
+			vm.cargaInstruccion(linea);
+		fichero.close();
 
-    private static Scanner console = new Scanner(System.in);
+		vm.ejecutaPrograma();
+	}
 
-    public static void main(String[] args) throws Exception {
-        BufferedReader fichero = new BufferedReader(new FileReader("factorial.txt"));
-        // BufferedReader fichero = new BufferedReader(new FileReader("fibonacci.txt"));
-
-        String linea;
-        while ((linea = fichero.readLine()) != null)
-            cargaInstruccion(linea);
-        fichero.close();
-
-        ejecutaPrograma();
-    }
-
-    // $ Cargar programa --------------------------------
-    private static void cargaInstruccion(String linea) {
-        if (linea.trim().length() == 0)
-            return;
-
-        String[] palabras = linea.split(" ");
-        instrucciones.add(palabras);
-    }
-
-    // $ Métodos Auxiliares --------------------------------
-    private static void push(int valor) {
-        pila[sp] = valor;
-        sp++;
-    }
-
-    private static int pop() {
-        sp--;
-        return pila[sp];
-    }
-
-    // $ Motor de Ejecución --------------------------------
-    private static void ejecutaPrograma() {
-        while (ip < instrucciones.size()) {
-            String[] instruccion = instrucciones.get(ip);
-
-            if (instruccion[0].equals("push")) {
-                push(Integer.parseInt(instruccion[1]));
-                ip++;
-            } else if (instruccion[0].equals("add")) {
-                push(pop() + pop());
-                ip++;
-            } else if (instruccion[0].equals("sub")) {
-                int b = pop();
-                int a = pop();
-                push(a - b);
-                ip++;
-            } else if (instruccion[0].equals("mul")) {
-                push(pop() * pop());
-                ip++;
-            } else if (instruccion[0].equals("jmp")) {
-                ip = Integer.parseInt(instruccion[1]);
-            } else if (instruccion[0].equals("jmpg")) {
-                int b = pop();
-                int a = pop();
-                if (a > b)
-                    ip = Integer.parseInt(instruccion[1]);
-                else
-                    ip++;
-            } else if (instruccion[0].equals("load")) {
-                int direccion = pop();
-                push(memoria[direccion]);
-                ip++;
-            } else if (instruccion[0].equals("store")) {
-                int valor = pop();
-                int direccion = pop();
-                memoria[direccion] = valor;
-                ip++;
-            } else if (instruccion[0].equals("input")) {
-                System.out.println("Escriba un entero:");
-                push(console.nextInt());
-                ip++;
-            } else if (instruccion[0].equals("output")) {
-                System.out.println(pop());
-                ip++;
-            }
-        }
-    }
 }

@@ -1,67 +1,46 @@
 package editor.core;
 
-import tools.*;
-
 public class EditorWindow {
 
-	private Dibujo dibujo;
+    private Dibujo dibujo;
 
-	private HerramientaSeleccion herramientaSeleccion;
-	private Herramienta herramientaActual;
+    public EditorWindow() {
+        dibujo = new Dibujo();
 
-	public EditorWindow() {
-		dibujo = new Dibujo();
-		herramientaActual = herramientaSeleccion = new HerramientaSeleccion(this);
-	}
+    }
 
-	public void dibuja() {
+    public void dibuja() {
 
-		// Se dibuja el menú
-		// Se dibuja la barra de herramientas lateral
-		// Se dibuja la línea de estado
-		System.out.println("Herramienta actual:" + herramientaActual.toString());
-		dibujo.dibuja();
-	}
+        // Se dibuja el menú
+        // Se dibuja la barra de herramientas lateral
+        // Se dibuja la línea de estado
 
-	// $ Métodos del Interfaz de Usuario -----------------------------
+        dibujo.dibuja();
+    }
 
-	public void mousePressed(int x, int y) {
-		System.out.println("Herramienta actual en el pulsar:" + herramientaActual);
-		this.herramientaActual.pinchar(x, y);
-	}
+    //$ Métodos del Interfaz de Usuario -----------------------------
 
-	public void mouseMoved(int x, int y) {
-		System.out.println("Herramienta actual en el mover:" + herramientaActual);
-		this.herramientaActual.mover(x, y);
-	}
+    // Se pinchar el botón de una herramienta para activarla
+    public void toolButtonClicked(String toolName) {
+        // ?
+    }
 
-	public void mouseReleased(int x, int y) {
-		System.out.println("Herramienta actual en el soltar:" + herramientaActual);
-		this.herramientaActual.soltar(x, y);
-	}
+    public void mousePressed(int x, int y) {
+        // ?
+    }
 
-	// $ Métodos del dibujo -----------------------------
+    public void mouseMoved(int x, int y) {
+        // ?
+    }
 
-	public Dibujo getDibujo() {
-		return dibujo;
-	}
+    public void mouseReleased(int x, int y) {
+        // ?
+    }
 
-	public Herramienta getDefaultHerramienta() {
-		return herramientaSeleccion;
-	}
+    //$ Métodos del dibujo -----------------------------
 
-	public Herramienta getHerramientaActual() {
-		return this.herramientaActual;
-	}
-
-	public void setHerramientaActual(Herramienta herramienta) {
-		this.herramientaActual.unselect();
-		this.herramientaActual = herramienta;
-		System.out.println("Herramienta actual en el set:" + herramientaActual);
-	}
-
-	public void herramientaTerminada() {
-		setHerramientaActual(herramientaSeleccion);
-	}
+    public Dibujo getDibujo() {
+        return dibujo;
+    }
 
 }
