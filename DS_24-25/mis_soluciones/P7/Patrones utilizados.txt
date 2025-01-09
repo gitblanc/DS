@@ -1,0 +1,13 @@
+Patrones utilizados
+
+Patrón utilizado: Strategy
+Participantes
+-------------
+1) Contexto: FileSystem
+2) Strategy: interfaz Output
+3) Cliente: Main
+4) Estrategias Concretas: FileOutput, InternetOutput y BluetoothOutput
+
+Patrón utilizado: Decorator
+Participantes
+-------------

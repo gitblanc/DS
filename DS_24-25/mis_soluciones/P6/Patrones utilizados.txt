@@ -1,0 +1,9 @@
+Patrones utilizados
+
+Patrón utilizado: Adapter (de objetos)
+Participantes
+-------------
+1) Cliente: Mapa
+2) Interfaz del cliente: Marcador
+3) Adaptadores: MarcadorMonumento, MarcadorFoto y MarcadorRestaurante
+4) Adaptados: Monumento, Foto  Restaurante
