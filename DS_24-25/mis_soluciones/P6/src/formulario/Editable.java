@@ -1,17 +1,19 @@
+/**
+ * 
+ */
 package formulario;
 
+/**
+ * 
+ */
 public interface Editable {
-	String getValor1();
 
-	String getValor2();
-	
-	String getValor1Label();
+	void imprimeEditable();
 
-	String getValor2Label();
-	
-	void setValor1(String newVal1);
+	void setValor1(String texto);
 
-	void setValor2(String newVal2);
+	void setValor2(String texto);
 
-	void imprimeValoresModificables();
+	String getInfo();
+
 }

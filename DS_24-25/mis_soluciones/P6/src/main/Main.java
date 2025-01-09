@@ -12,9 +12,9 @@ import google.maps.Mapa;
 import model.Foto;
 import model.Monumento;
 import model.Restaurante;
-import model.marcadores.FotoMarcador;
-import model.marcadores.MonumentoMarcador;
-import model.marcadores.RestauranteMarcador;
+import model.marcadores.MarcadorFoto;
+import model.marcadores.MarcadorMonumento;
+import model.marcadores.MarcadorRestaurante;
 
 public class Main {
 
@@ -24,19 +24,18 @@ public class Main {
 		Mapa map = new Mapa();
 
 		// 1. Meter elementos en el mapa
-		// Tenemos la restricción de no poder modificar Database
 		System.out.println("\n 1. Metiendo marcadores en el mapa");
 
 		for (Monumento monumento : db.selectMonumentos()) {
-			map.add(new MonumentoMarcador(monumento));
+			map.add(new MarcadorMonumento(monumento));
 		}
 
 		for (Foto foto : db.selectFotos()) {
-			map.add(new FotoMarcador(foto));
+			map.add(new MarcadorFoto(foto));
 		}
 
 		for (Restaurante restaurante : db.selectRestaurantes()) {
-			map.add(new RestauranteMarcador(restaurante));
+			map.add(new MarcadorRestaurante(restaurante));
 		}
 
 		// 2. En el mapa se dibujan los marcadores para los elementos añadidos al mapa

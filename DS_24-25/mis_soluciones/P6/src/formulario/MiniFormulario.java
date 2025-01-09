@@ -9,20 +9,20 @@ public class MiniFormulario {
 
 	public void editar(Editable editable) {
 
-		System.out.println("Editando " + editable.toString() + ".");
+		System.out.println("Editando " + editable.getInfo() + ".");
 
 		System.out.println("Valores actuales:");
 		// imprimeMonumento(monumento);
-		imprimeEditable(editable);
+		editable.imprimeEditable();
 
 		System.out.println("Escriba nuevos valores (dejar en blanco para dejar el valor actual):");
-		System.out.println(editable.getValor1Label());
+		System.out.print("- Autor: ");
 		String texto = getLínea();
 		if (texto.length() > 0)
 			// monumento.setAutor(texto);
 			editable.setValor1(texto);
 
-		System.out.println(editable.getValor2Label());
+		System.out.print("- Dirección: ");
 		texto = getLínea();
 		if (texto.length() > 0)
 			// monumento.setDirección(texto);
@@ -30,11 +30,7 @@ public class MiniFormulario {
 
 		System.out.println("Valores finales:");
 		// imprimeMonumento(monumento);
-		imprimeEditable(editable);
-	}
-
-	private void imprimeEditable(Editable editable) {
-		editable.imprimeValoresModificables();
+		editable.imprimeEditable();
 	}
 
 //	private void imprimeMonumento(Monumento monumento) {
