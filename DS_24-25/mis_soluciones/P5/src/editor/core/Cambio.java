@@ -1,9 +1,9 @@
-package editor.cambios;
+package editor.core;
 
 public interface Cambio {
 
-	void redo();
-
 	void undo();
+
+	void redo();
 
 }

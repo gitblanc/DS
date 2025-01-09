@@ -1,0 +1,17 @@
+Patrones utilizados
+
+Patrón utilizado: Strategy
+Participantes
+-------------
+1) Contexto: Campo
+2) Strategy: interfaz Validador
+3) Cliente: Main
+4) Estrategias Concretas: ValidadorTexto, ValidadorNumero, ValidadorLongitud, ValidadorMayorQue, ValidadorMenorQue, ValidadorCompuestoAnd y ValidadorCompuestoOr (estos dos últimos usan el patrón Composite)
+
+Patrón utilizado: Composite
+Participantes
+-------------
+1) Cliente: Main
+2) Componente: interfaz Validador
+3) Hoja: ValidadorTexto, ValidadorNumero, ValidadorLongitud, ValidadorMayorQue y ValidadorMenorQue
+4) Composite: ValidadorCompuestoAnd y ValidadorCompuestoOr

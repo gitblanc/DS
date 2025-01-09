@@ -13,69 +13,68 @@ import editor.core.EditorWindow;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        EditorWindow editor = new EditorWindow();
+		EditorWindow editor = new EditorWindow();
 
-        simulateMouse(editor);
-    }
+		simulateMouse(editor);
+	}
 
-    public static void simulateMouse(EditorWindow editor) throws IOException {
+	public static void simulateMouse(EditorWindow editor) throws IOException {
 
-        System.out.println("\nActivación de Herramientas: rectangulo | circulo | triangulo | seleccion");
-        System.out.println("Acciones de Ratón: pinchar x,y | mover x,y | soltar x,y");
-        System.out.println("Acciones del Historial: undo | redo");
-        System.out.println("Otros Comandos: dibujar | exit \n");
+		System.out.println("\nActivación de Herramientas: rectangulo | circulo | triangulo | seleccion");
+		System.out.println("Acciones de Ratón: pinchar x,y | mover x,y | soltar x,y");
+		System.out.println("Otros Comandos: dibujar | exit \n");
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        do {
-            System.out.print("> ");
-            String[] line = in.readLine().split("[ ,]");
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		do {
+			System.out.print("> ");
+			String[] line = in.readLine().split("[ ,]");
 
-            if (line[0].equals("exit"))
-                return;
+			if (line[0].equals("exit"))
+				return;
 
-            //$ Pulsación de los botones de las herramientas -----------------------------
+			// $ Pulsación de los botones de las herramientas -----------------------------
 
-            if (line[0].startsWith("rec"))
-                editor.toolButtonClicked("rectangulo");
+			if (line[0].startsWith("rec"))
+				editor.toolButtonClicked("rectangulo");
 
-            else if (line[0].startsWith("cir"))
-                editor.toolButtonClicked("circulo");
+			else if (line[0].startsWith("cir"))
+				editor.toolButtonClicked("circulo");
 
-            else if (line[0].startsWith("tri"))
-                editor.toolButtonClicked("triangulo");
+			else if (line[0].startsWith("tri"))
+				editor.toolButtonClicked("triangulo");
 
-            else if (line[0].startsWith("sel"))
-                editor.toolButtonClicked("seleccion");
+			else if (line[0].startsWith("sel"))
+				editor.toolButtonClicked("seleccion");
 
-            //$ Acciones del Ratón -----------------------------
+			// $ Acciones del Ratón -----------------------------
 
-            else if (line[0].startsWith("pin"))
-                editor.mousePressed(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
+			else if (line[0].startsWith("pin"))
+				editor.mousePressed(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
 
-            else if (line[0].startsWith("mov"))
-                editor.mouseMoved(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
+			else if (line[0].startsWith("mov"))
+				editor.mouseMoved(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
 
-            else if (line[0].startsWith("sol"))
-                editor.mouseReleased(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
+			else if (line[0].startsWith("sol"))
+				editor.mouseReleased(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
 
-            //$ Acciones del Historial -------------------------
-            
-            else if(line[0].startsWith("und"))
-            	editor.undo();
-            else if(line[0].startsWith("red"))
-            	editor.redo();
-            
-            //$ Otros comandos -----------------------------
+			//$ Acciones del Historial -------------------------
 
-            else if (line[0].startsWith("dib"))
-                editor.dibuja();
+			else if (line[0].startsWith("und"))
+				editor.undo();
+			else if (line[0].startsWith("red"))
+				editor.redo();
 
-            else
-                System.out.println("Comando no válido");
+			// $ Otros comandos -----------------------------
 
-        } while (true);
-    }
+			else if (line[0].startsWith("dib"))
+				editor.dibuja();
+
+			else
+				System.out.println("Comando no válido");
+
+		} while (true);
+	}
 
 }

@@ -1,68 +1,37 @@
 package editor.core;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
+import editor.figuras.circulo.HerramientaCirculo;
+import editor.figuras.rectangulo.HerramientaRectangulo;
+import editor.figuras.triangulo.HerramientaTriangulo;
 import editor.herramientas.HerramientaSeleccion;
-import figuras.circulo.HerramientaCirculo;
-import figuras.rectangulo.HerramientaRectangulo;
-import figuras.triangulo.HerramientaTriangulo;
 
 public class EditorWindow {
 
 	private Dibujo dibujo;
+	// Herramientas disponibles
 	private Map<String, Herramienta> herramientas;
-	private Herramienta herramientaActual;
-	private Herramienta seleccion;
+	// Herramienta seleccionada
+	private Herramienta herramienta, seleccion;
+	// Historial
 	private HistorialCambios historial;
 
 	public EditorWindow() {
 		dibujo = new Dibujo();
-
-		herramientas = new HashMap<>();
-		doCreaHerramientas(herramientas);
-		herramientaActual = seleccion = herramientas.get("seleccion");
+		herramientas = new HashMap<String, Herramienta>();
+		crearHerramientas();
+		// En un principio la herramienta seleccionada es la de selección
+		herramienta = seleccion = herramientas.get("seleccion");
 		historial = new HistorialCambios();
 	}
 
-	protected void doCreaHerramientas(Map<String, Herramienta> herramientas) {
+	private void crearHerramientas() {
 		herramientas.put("rectangulo", new HerramientaRectangulo(this));
 		herramientas.put("circulo", new HerramientaCirculo(this));
 		herramientas.put("triangulo", new HerramientaTriangulo(this));
 		herramientas.put("seleccion", new HerramientaSeleccion(this));
-	}
-
-	// $ Métodos del Interfaz de Usuario -----------------------------
-
-	public void toolButtonClicked(String nombre) {
-		setHerramientaActual(herramientas.get(nombre));
-	}
-
-	public void mousePressed(int x, int y) {
-		herramientaActual.mousePressed(x, y);
-	}
-
-	public void mouseMoved(int x, int y) {
-		herramientaActual.mouseMoved(x, y);
-	}
-
-	public void mouseReleased(int x, int y) {
-		herramientaActual.mouseReleased(x, y);
-	}
-
-	// $ Métodos de Herramientas ---------------------
-
-	private void setHerramientaActual(Herramienta herramienta) {
-		this.herramientaActual = herramienta;
-	}
-
-	public void finHerramienta() {
-		herramientaActual = seleccion;
-	}
-
-	// $ Métodos del dibujo -----------------------------
-
-	public Dibujo getDibujo() {
-		return dibujo;
 	}
 
 	public void dibuja() {
@@ -72,21 +41,58 @@ public class EditorWindow {
 		// Se dibuja la línea de estado
 
 		dibujo.dibuja();
-
-		System.out.println("  [" + herramientaActual.getClass().getSimpleName() + " activada]");
+		System.out.println("  [" + herramienta.getClass().getSimpleName() + " activada]");
 		System.out.println();
 	}
 
+	// $ Métodos del Interfaz de Usuario -----------------------------
+
+	// Se pincha el botón de una herramienta para activarla
+	public void toolButtonClicked(String toolName) {
+		setHerramienta(herramientas.get(toolName));
+	}
+
+	public void mousePressed(int x, int y) {
+		herramienta.mousePressed(x, y);
+	}
+
+	public void mouseMoved(int x, int y) {
+		herramienta.mouseMoved(x, y);
+	}
+
+	public void mouseReleased(int x, int y) {
+		herramienta.mouseReleased(x, y);
+	}
+
+	// $ Métodos del dibujo -----------------------------
+
+	public Dibujo getDibujo() {
+		return dibujo;
+	}
+
+	private void setHerramienta(Herramienta h) {
+		this.herramienta = h;
+	}
+
+	public void addFigura(Figura figura) {
+		this.dibujo.addFigura(figura);
+	}
+
+	public void finHerramienta() {
+		herramienta = seleccion;
+	}
+
+	// Historial
+
 	public void undo() {
-		getHistorial().undo();
+		historial.undo();
 	}
 
 	public void redo() {
-		getHistorial().redo();
+		historial.redo();
 	}
 
-	public HistorialCambios getHistorial() {
-		return historial;
+	public HistorialCambios getHistorialCambios() {
+		return this.historial;
 	}
-
 }

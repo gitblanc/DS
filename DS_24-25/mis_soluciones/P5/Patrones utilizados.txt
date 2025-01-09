@@ -1,0 +1,10 @@
+Patrones utilizados
+
+Patrón utilizado: Command
+Participantes
+-------------
+1) Cliente: EditorWindow
+2) Invocador: HistorialCambios
+3) interfaz Comando: interfaz Cambio
+4) Receptor: Dibujo
+5) Comandos Concretos: CreacionCambio y MoverCambio

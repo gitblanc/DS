@@ -1,5 +1,6 @@
 package editor.cambios;
 
+import editor.core.Cambio;
 import editor.core.Figura;
 
 public class MoverCambio implements Cambio {
@@ -14,13 +15,13 @@ public class MoverCambio implements Cambio {
 	}
 
 	@Override
-	public void redo() {
-		figura.mover(x, y);
+	public void undo() {
+		this.figura.mover(y, x);
 	}
 
 	@Override
-	public void undo() {
-		figura.mover(-x, -y);
+	public void redo() {
+		this.figura.mover(-y, -x);
 	}
 
 }

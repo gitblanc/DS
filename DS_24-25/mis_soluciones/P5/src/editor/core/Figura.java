@@ -2,9 +2,10 @@ package editor.core;
 
 public interface Figura {
 
-    public void dibujar();
+	void dibujar();
 
-    public boolean contiene(int x, int y);
+	boolean contiene(int x, int y);
 
-    public void mover(int dx, int dy);
+	void mover(int i, int j);
+
 }

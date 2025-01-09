@@ -5,27 +5,27 @@ import java.util.List;
 
 public class Dibujo {
 
-	private List<Figura> figuras = new ArrayList<>();
-
-	public void addFigura(Figura figura) {
-		figuras.add(figura);
-	}
-
-	public void removeFigura(Figura figura) {
-		figuras.remove(figura);
-	}
+	private List<Figura> figuras = new ArrayList<Figura>();
 
 	public void dibuja() {
-		for (Figura figura : figuras) {
-			figura.dibujar();
-		}
+		// Dibujar las figuras que contenga
+		for (Figura f : figuras)
+			f.dibujar();
+	}
+
+	public void addFigura(Figura f) {
+		figuras.add(f);
+	}
+
+	public void removeFigura(Figura f) {
+		figuras.remove(f);
 	}
 
 	public Figura getFigura(int x, int y) {
-		for (Figura figura : figuras)
-			if (figura.contiene(x, y))
-				return figura;
+		for (Figura f : figuras) {
+			if (f.contiene(x, y))
+				return f;
+		}
 		return null;
 	}
-
 }

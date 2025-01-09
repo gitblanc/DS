@@ -1,36 +1,51 @@
+/**
+ * 
+ */
 package editor.herramientas;
 
 import java.awt.Point;
 
 import editor.cambios.CreacionCambio;
-import editor.core.*;
+import editor.core.EditorWindow;
+import editor.core.Figura;
+import editor.core.Herramienta;
 
+/**
+ * Esta clase surge de la similitud de código entre HerramientaCirculo y
+ * HerramientaRectangulo ---> Sólo cambian en cómo crean la figura
+ */
 public abstract class HerramientaCreacion implements Herramienta {
 
-	protected EditorWindow editor;
-	private Point inicio;
+	private EditorWindow editor;
+	private Point posicionInicio;
 
-	protected HerramientaCreacion(EditorWindow editor) {
-		this.editor = editor;
+	public HerramientaCreacion(EditorWindow editorWindow) {
+		this.editor = editorWindow;
 	}
 
+	@Override
 	public void mousePressed(int x, int y) {
-		inicio = new Point(x, y);
+		this.posicionInicio = new Point(x, y);
 	}
 
+	@Override
 	public void mouseMoved(int x, int y) {
 	}
 
+	@Override
 	public void mouseReleased(int x, int y) {
-		Point fin = new Point(x, y);
-		Figura figura = doCreaFigura(inicio, fin);
-		editor.getDibujo().addFigura(figura);
+		Point posFin = new Point(x, y);
 
-		editor.getHistorial().addCambio(new CreacionCambio(figura, this.editor.getDibujo()));
+		Figura figura = doCrearFigura(posicionInicio, posFin);
+
+		editor.addFigura(figura);
+
+		// Para el historial
+		editor.getHistorialCambios().addCambio(new CreacionCambio(figura, editor.getDibujo()));
 
 		editor.finHerramienta();
 	}
 
-	protected abstract Figura doCreaFigura(Point inicio, Point fin);
+	protected abstract Figura doCrearFigura(Point posicionInicio, Point posFin);
 
 }
