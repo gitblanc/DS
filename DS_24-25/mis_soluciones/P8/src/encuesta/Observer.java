@@ -1,11 +1,6 @@
-/**
- * 
- */
 package encuesta;
 
-/**
- * 
- */
 public interface Observer {
-	void notificar(Encuesta encuesta);
+
+	void update(Encuesta encuesta);
 }

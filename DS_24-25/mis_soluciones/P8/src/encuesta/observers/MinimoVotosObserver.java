@@ -14,15 +14,15 @@ public class MinimoVotosObserver implements Observer {
 	private int minVotos;
 	private Observer observer;
 
-	public MinimoVotosObserver(int votos, Observer o) {
-		this.minVotos = votos;
+	public MinimoVotosObserver(int i, Observer o) {
+		this.minVotos = i;
 		this.observer = o;
 	}
 
 	@Override
-	public void notificar(Encuesta encuesta) {
+	public void update(Encuesta encuesta) {
 		if (encuesta.getVotosSi() + encuesta.getVotosNo() >= this.minVotos)
-			this.observer.notificar(encuesta);
+			this.observer.update(encuesta);
 	}
 
 }

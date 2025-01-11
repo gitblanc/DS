@@ -10,21 +10,14 @@ package main;
 import java.io.IOException;
 
 import encuesta.*;
-import encuesta.observers.BackupObserver;
-import encuesta.observers.GraficoBarrasObserver;
-import encuesta.observers.GraficoCircularObserver;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
-		Encuesta encuesta = new Encuesta("¿Está a favor de la energia nuclear?");
+    public static void main(String[] args) throws IOException {
+        Encuesta encuesta = new Encuesta("¿Está a favor de la energia nuclear?");
 
-		encuesta.addObservador(new GraficoBarrasObserver());
-		encuesta.addObservador(new GraficoCircularObserver());
-		encuesta.addObservador(new BackupObserver());
-
-		TextUserInterface userInterface = new TextUserInterface();
-		userInterface.rellena(encuesta);
-	}
+        TextUserInterface userInterface = new TextUserInterface();
+        userInterface.rellena(encuesta);
+    }
 
 }

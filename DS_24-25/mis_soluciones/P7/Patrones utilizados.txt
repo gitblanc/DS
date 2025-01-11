@@ -11,3 +11,7 @@ Participantes
 Patrón utilizado: Decorator
 Participantes
 -------------
+1) Cliente: Main
+2) interfaz Componente: Output
+3) Componentes concretos: FileOutput, InternetOutput y BluetoothOutput
+4) Decoradores Concretos: FiltroSaltoLinea, FiltroEspaciosRepetidos, FiltroEncriptar, FiltroContarCaracteres y FiltroEnvioMultiple

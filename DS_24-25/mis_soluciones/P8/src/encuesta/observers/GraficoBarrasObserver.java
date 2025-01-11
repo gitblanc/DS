@@ -12,7 +12,7 @@ import encuesta.Observer;
 public class GraficoBarrasObserver implements Observer {
 
 	@Override
-	public void notificar(Encuesta encuesta) {
+	public void update(Encuesta encuesta) {
 		System.out.println("Aquí se dibujaría el gráfico de barras.");
 	}
 

@@ -7,8 +7,7 @@ public class Encuesta {
 
 	private String pregunta;
 	private int si, no;
-
-	private List<Observer> observadores = new ArrayList<>(); // Patrón Observer
+	private List<Observer> observers = new ArrayList<Observer>();
 
 	public Encuesta(String pregunta) {
 		this.pregunta = pregunta;
@@ -26,36 +25,30 @@ public class Encuesta {
 		return no;
 	}
 
-	public void incrementaSi() {
-		si++;
-		notificaObservadores();
+	// $---- Para los observers
+
+	public void addObserver(Observer o) {
+		observers.add(o);
 	}
 
-	private void notificaObservadores() {
-		for (Observer o : observadores)
-			o.notificar(this);
+	public void removeObserver(Observer o) {
+		observers.remove(o);
+	}
+
+	private void notifyObservers() {
+		for (Observer o : observers) {
+			o.update(this);
+		}
+	}
+
+	public void incrementaSi() {
+		si++;
+		notifyObservers();
 	}
 
 	public void incrementaNo() {
 		no++;
-		notificaObservadores();
+		notifyObservers();
 	}
-
-	public void addObservador(Observer o) {
-		this.observadores.add(o);
-	}
-
-	// Parte de representar los datos
-//	private void actualizaGráficoCircular() {
-//		System.out.println("Aquí se dibujaría el gráfico circular.");
-//	}
-//
-//	private void actualizaGráficoBarras() {
-//		System.out.println("Aquí se dibujaría el gráfico de barras.");
-//	}
-//
-//	private void hacerBackup() {
-//		System.out.println("Aquí se guardarán los datos en disco/BD.");
-//	}
 
 }

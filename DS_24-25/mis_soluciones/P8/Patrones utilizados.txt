@@ -1,0 +1,16 @@
+Patrones utilizados
+
+Patrón utilizado: Observer
+Participantes
+-------------
+1) Subject: Encuesta
+2) Observer: interfaz Observer
+3) Concrete Observer: BackupObserver, LineaEstadoObserver, GraficoBarrasObserver, GraficoCircularObserver, IntervaloVotosObserver MinVotosObserver(que son Decoradores)
+
+Patrón utilizado: Decorator
+Participantes
+-------------
+1) Cliente: Main
+2) interfaz Componente: Observer
+3) Componentes concretos: BackupObserver, LineaEstadoObserver, GraficoBarrasObserver, GraficoCircularObserver
+4) Decoradores Concretos: IntervaloVotosObserver y MinVotosObserver

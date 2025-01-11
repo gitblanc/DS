@@ -7,9 +7,9 @@ import java.io.IOException;
 
 import encuesta.Encuesta;
 import encuesta.TextUserInterface;
-import encuesta.observers.GraficoBarrasObserver;
-import encuesta.observers.IntervaloVotosObserver;
+import encuesta.observers.GraficoCircularObserver;
 import encuesta.observers.LineaEstadoObserver;
+import encuesta.observers.MinimoVotosObserver;
 
 /**
  * 
@@ -23,10 +23,11 @@ public class Programa4 {
 	public static void main(String[] args) throws IOException {
 		Encuesta encuesta = new Encuesta("¿Está a favor de la energia nuclear?");
 
-		encuesta.addObservador(new LineaEstadoObserver());
-		encuesta.addObservador(new IntervaloVotosObserver(3, new GraficoBarrasObserver()));
-
 		TextUserInterface userInterface = new TextUserInterface();
+
+		encuesta.addObserver(new MinimoVotosObserver(3, new GraficoCircularObserver()));
+		encuesta.addObserver(new LineaEstadoObserver());
+
 		userInterface.rellena(encuesta);
 	}
 

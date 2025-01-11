@@ -19,18 +19,19 @@ public class Programa1 {
 
 	/**
 	 * @param args
-	 * @throws IOException
+	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
 		Encuesta encuesta = new Encuesta("¿Está a favor de la energia nuclear?");
-		
-		encuesta.addObservador(new GraficoBarrasObserver());
-		encuesta.addObservador(new GraficoCircularObserver());
-		encuesta.addObservador(new BackupObserver());
-		encuesta.addObservador(new LineaEstadoObserver());
-		
-		TextUserInterface userInterface = new TextUserInterface();
-		userInterface.rellena(encuesta);
+
+        TextUserInterface userInterface = new TextUserInterface();
+        
+        encuesta.addObserver(new GraficoCircularObserver());
+        encuesta.addObserver(new GraficoBarrasObserver());
+        encuesta.addObserver(new BackupObserver());
+        encuesta.addObserver(new LineaEstadoObserver());
+        
+        userInterface.rellena(encuesta);
 	}
 
 }

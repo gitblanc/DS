@@ -14,18 +14,18 @@ public class IntervaloVotosObserver implements Observer {
 	private int intervalo, contador;
 	private Observer observer;
 
-	public IntervaloVotosObserver(int i, Observer o) {
-		this.intervalo = this.contador = i;
+	public IntervaloVotosObserver(int interv, Observer o) {
+		this.intervalo = this.contador = interv;
 		this.observer = o;
 	}
 
 	@Override
-	public void notificar(Encuesta encuesta) {
-		if (this.contador == this.intervalo) {
-			this.observer.notificar(encuesta);
-			this.contador = 1;
+	public void update(Encuesta encuesta) {
+		if (intervalo == contador) {
+			observer.update(encuesta);
+			contador = 1;
 		} else
-			this.contador++;
+			contador += 1;
 	}
 
 }
