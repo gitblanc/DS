@@ -1,0 +1,11 @@
+Patrones utilizados
+
+SOLUCION 1: si queremos cambiar la plataforma de ejecución en tiempo de ejecución
+
+Patrón utilizado: Adapter (de objetos)
+Participantes
+-------------
+1) Cliente: Ballgame
+2) Interfaz del cliente: Platform
+3) Adaptadores: WindowsPlatform, AndroidPlatform y PlayStationPlatform
+4) Adaptados: WindpwsAPI, AndoirdAPI y PS5API

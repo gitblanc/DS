@@ -7,11 +7,11 @@
 
 package game;
 
-import platform.android.AndroidPlatform;
+import platform.playstation.PlayStationPlatform;
 
 public class Main {
 	public static void main(String[] args) {
-		BallGame game = new BallGame(new AndroidPlatform()); // En esta solución uso el Adapter
+		BallGame game = new BallGame(new PlayStationPlatform());
 		game.start();
 	}
 }

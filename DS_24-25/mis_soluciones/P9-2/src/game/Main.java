@@ -8,8 +8,8 @@
 package game;
 
 public class Main {
-	public static void main(String[] args) {
-		BallGame game = new AndroidBallGame(); // Template Method
-		game.start();
-	}
+    public static void main(String[] args) {
+        BallGame game = new PlayStationBallGame();
+        game.start();
+    }
 }

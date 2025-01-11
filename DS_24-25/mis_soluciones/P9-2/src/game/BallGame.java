@@ -8,9 +8,9 @@ import platform.Image2D;
  * en las distintas plataformas
  */
 
-//enum Platform {
-//    ANDROID, WINDOWS, PLAYSTATION
-//};
+enum Platform {
+	ANDROID, WINDOWS, PLAYSTATION
+};
 
 public abstract class BallGame {
 
@@ -28,9 +28,9 @@ public abstract class BallGame {
 		}
 	}
 
-	protected abstract Image2D loadImage(String file);
-
 	protected abstract void drawBall(Image2D image, Point point);
 
 	protected abstract Point getPosition();
+
+	protected abstract Image2D loadImage(String file);
 }

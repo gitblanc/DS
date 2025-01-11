@@ -1,0 +1,9 @@
+Patrones utilizados
+
+SOLUCION 2: si no queremos cambiar la plataforma en tiempo de ejecución (es decir, código integrado en la propia consola)
+
+Patrón utilizado: Template method
+Participantes
+-------------
+1) AbstractClass: BallGame
+2) Clases Concretas: WindowsBallGame, AndroidBallGame y PlayStationBallGame

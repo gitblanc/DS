@@ -12,20 +12,22 @@ import platform.Image2D;
  * 
  */
 public class WindowsPlatform implements Platform {
-	private WindowsAPI windowsApi = new WindowsAPI();
+
+	private WindowsAPI windows = new WindowsAPI();
 
 	@Override
-	public Image2D loadImage(String path) {
-		return windowsApi.loadFile(path);
-	}
-
-	@Override
-	public Point getPosition() {
-		return windowsApi.getMouseClick();
+	public Image2D loadImage(String file) {
+		return windows.loadFile(file);
 	}
 
 	@Override
 	public void drawBall(Image2D image, Point point) {
-		windowsApi.paint(point.x, point.y, image);
+		windows.paint(point.x, point.y, image);
 	}
+
+	@Override
+	public Point getPosition() {
+		return windows.getMouseClick();
+	}
+
 }

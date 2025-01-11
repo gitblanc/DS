@@ -1,7 +1,7 @@
 /**
  * 
  */
-package platform.android;
+package platform.playstation;
 
 import java.awt.Point;
 
@@ -11,23 +11,23 @@ import platform.Image2D;
 /**
  * 
  */
-public class AndroidPlatform implements Platform {
+public class PlayStationPlatform implements Platform {
 
-	private AndroidAPI android = new AndroidAPI();
+	private Playstation5API ps5 = new Playstation5API();
 
 	@Override
 	public Image2D loadImage(String file) {
-		return android.loadResource(file);
+		return ps5.loadGraphics(file);
 	}
 
 	@Override
 	public void drawBall(Image2D image, Point point) {
-		android.draw(point.x, point.y, image);
+		ps5.render(point.x, point.y, image);
 	}
 
 	@Override
 	public Point getPosition() {
-		return android.getTouch();
+		return ps5.getJoystick();
 	}
 
 }

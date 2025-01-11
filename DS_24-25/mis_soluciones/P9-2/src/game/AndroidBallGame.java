@@ -12,7 +12,7 @@ import platform.android.AndroidAPI;
  * 
  */
 public class AndroidBallGame extends BallGame {
-
+	
 	private AndroidAPI android = new AndroidAPI();
 
 	@Override

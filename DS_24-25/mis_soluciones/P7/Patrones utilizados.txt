@@ -14,4 +14,12 @@ Participantes
 1) Cliente: Main
 2) interfaz Componente: Output
 3) Componentes concretos: FileOutput, InternetOutput y BluetoothOutput
-4) Decoradores Concretos: FiltroSaltoLinea, FiltroEspaciosRepetidos, FiltroEncriptar, FiltroContarCaracteres y FiltroEnvioMultiple
+4) Decoradores Concretos: FiltroSaltoLinea, FiltroEspaciosRepetidos, FiltroEncriptar, FiltroContarCaracteres y FiltroEnvioMultiple (Composite)
+
+Patrón utilizado: Composite
+Participantes
+-------------
+1) Cliente: Main
+2) Componente: interfaz Output
+3) Hoja: FileOutput, InternetOutput, BluetoothOutput, FiltroSaltoLinea, FiltroEspaciosRepetidos, FiltroEncriptar y FiltroContarCaracteres
+4) Composite: FiltroEnvioMultiple
