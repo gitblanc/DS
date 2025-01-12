@@ -1,6 +1,6 @@
 package nodes;
 
-import format.Visitor;
+import visitors.Visitor;
 
 public class Print implements Statement {
 
@@ -12,8 +12,8 @@ public class Print implements Statement {
     }
 
     @Override
-    public void selectMethod(Visitor formatter) {
-        formatter.formatPrint(this);
+    public Object accept(Visitor formatter, Object param) {
+        return formatter.visit(this, param);
     }
 
 }

@@ -1,7 +1,7 @@
 package nodes;
 
-import format.Visitor;
+import visitors.Visitor;
 
 public interface Node {
-    void selectMethod(Visitor visitor);
+    Object accept(Visitor visitor, Object param);
 }

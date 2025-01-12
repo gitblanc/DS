@@ -2,7 +2,7 @@ package nodes;
 
 import java.util.*;
 
-import format.Visitor;
+import visitors.Visitor;
 
 public class Program implements Node {
 
@@ -14,8 +14,8 @@ public class Program implements Node {
     }
 
     @Override
-    public void selectMethod(Visitor formatter) {
-        formatter.formatProgram(this);
+    public Object accept(Visitor formatter, Object param) {
+        return formatter.visit(this, param);
     }
 
 }

@@ -1,6 +1,6 @@
 package nodes;
 
-import format.Visitor;
+import visitors.Visitor;
 
 public class Input implements Statement {
 
@@ -12,7 +12,7 @@ public class Input implements Statement {
     }
 
     @Override
-    public void selectMethod(Visitor formatter) {
-        formatter.formatInput(this);
+    public Object accept(Visitor formatter, Object param) {
+        return formatter.visit(this, param);
     }
 }

@@ -1,6 +1,6 @@
 package nodes;
 
-import format.Visitor;
+import visitors.Visitor;
 
 public class Arithmetic implements Expression {
 
@@ -15,8 +15,8 @@ public class Arithmetic implements Expression {
     }
 
     @Override
-    public void selectMethod(Visitor formatter) {
-        formatter.formatArithmetic(this);
+    public Object accept(Visitor formatter, Object param) {
+        return formatter.visit(this, param);
     }
 
 }

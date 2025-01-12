@@ -9,32 +9,41 @@ package main;
 
 import java.util.List;
 
-import nodes.*;
+import nodes.Arithmetic;
+import nodes.Input;
+import nodes.Print;
+import nodes.Program;
+import nodes.Variable;
+import visitors.Formateador;
+import visitors.Interprete;
 
 public class Main {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        /*
-         * input alto;
-         * input ancho;
-         * print alto * ancho;
-         */
+		/*
+		 * input alto; input ancho; print alto * ancho;
+		 */
 
-        // input alto;
-        var inputAlto = new Input(new Variable("alto"));
+		// input alto;
+		var inputAlto = new Input(new Variable("alto"));
 
-        // input ancho;
-        var inputAncho = new Input(new Variable("ancho"));
+		// input ancho;
+		var inputAncho = new Input(new Variable("ancho"));
 
-        // print alto * ancho;
-        var print = new Print(new Arithmetic(new Variable("alto"), "*", new Variable("ancho")));
+		// print alto * ancho;
+		var print = new Print(new Arithmetic(new Variable("alto"), "*", new Variable("ancho")));
 
-        // Crear el programa
-        Program program = new Program(List.of(inputAlto, inputAncho, print));
+		// Crear el programa
+		Program program = new Program(List.of(inputAlto, inputAncho, print));
 
-        // Formatear el programa
-        var formatter = new format.Formatter();
-        program.selectMethod(formatter);
-    }
+		// Formatear el programa
+		var formatter = new Formateador();
+		program.accept(formatter, null);
+
+		// Ejecutar el programa
+		var interpreter = new Interprete();
+		program.accept(interpreter, null);
+
+	}
 }
