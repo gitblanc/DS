@@ -1,0 +1,7 @@
+package curiosity.controller.obstacleBehaviour;
+
+public interface ObstacleBehaviour {
+	
+	public void foundObstacle();
+
+}

@@ -1,0 +1,13 @@
+package curiosity.controller.obstacleBehaviour;
+
+import curiosity.controller.RoverController;
+
+public class JumpNextTask implements ObstacleBehaviour {
+
+	@Override
+	public boolean foundObstacle(RoverController roverController) {
+		roverController.jumpNextTask();
+		return true;
+	}
+
+}

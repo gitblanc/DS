@@ -1,0 +1,15 @@
+package curiosity.controller.obstacleBehaviour;
+
+import curiosity.controller.RoverController;
+
+public class ReturnOrigin implements ObstacleBehaviour {
+
+	@Override
+	public void foundObstacle(RoverController roverController) {
+		for(UndoableTasks ut : roverController.getUndoableTasks()) {
+			
+		}
+		
+	}
+
+}

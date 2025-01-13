@@ -1,0 +1,23 @@
+package curiosity.controller.command;
+
+import curiosity.rover.Rover;
+
+public class MoveBackwardsCommand implements Command  {
+	
+	private Rover rover;
+
+	public MoveBackwardsCommand(Rover rover) {
+		this.rover = rover;
+	}
+
+	@Override
+	public void execute() {
+		rover.moveBackward();
+	}
+
+	@Override
+	public void undo() {
+		rover.moveForward();
+	}
+
+}

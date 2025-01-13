@@ -8,10 +8,6 @@ import platform.Image2D;
  * en las distintas plataformas
  */
 
-enum Platform {
-	ANDROID, WINDOWS, PLAYSTATION
-};
-
 public abstract class BallGame {
 
 	public void start() {

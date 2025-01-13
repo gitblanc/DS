@@ -1,0 +1,28 @@
+package curiosity.controller.command;
+
+import curiosity.rover.Rover;
+
+public class RotateLeftCommand implements UndoableCommand {
+	
+	/*
+	 * Clase añadida para la parte 1 (volver inicio)
+	 * Se trata del patrón Command y esta interfaz correspondería con uno de los múltiples ConcreteCommand
+	 */
+	
+	private Rover rover;
+
+	public RotateLeftCommand(Rover rover) {
+		this.rover = rover;
+	}
+
+//	@Override
+//	public void execute() {
+//		rover.turnLeft();
+//	}
+
+	@Override
+	public void undo() {
+		rover.turnRight();
+	}
+
+}

@@ -1,0 +1,23 @@
+package curiosity.controller.command;
+
+import curiosity.rover.Rover;
+
+public class RotateLeftCommand implements UndoableCommand {
+	
+	private Rover rover;
+
+	public RotateLeftCommand(Rover rover) {
+		this.rover = rover;
+	}
+
+//	@Override
+//	public void execute() {
+//		rover.turnLeft();
+//	}
+
+	@Override
+	public void undo() {
+		rover.turnRight();
+	}
+
+}

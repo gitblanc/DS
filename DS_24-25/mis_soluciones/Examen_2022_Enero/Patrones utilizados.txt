@@ -1,0 +1,9 @@
+Patrones utilizados
+
+Patrón utilizado: State
+Participantes
+-------------
+1) Contexto: RoverController
+2) State: Estado
+3) Cliente: Main
+4) Estados Concretos: Forward, Backward, Left, Right, Photo, Sample

@@ -1,0 +1,11 @@
+package curiosity.controller.obstacleBehaviour;
+
+public class StayInPlace implements ObstacleBehaviour {
+
+	@Override
+	public void foundObstacle() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

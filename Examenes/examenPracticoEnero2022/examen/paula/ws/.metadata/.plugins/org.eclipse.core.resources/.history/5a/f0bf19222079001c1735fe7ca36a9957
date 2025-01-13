@@ -1,0 +1,70 @@
+package curiosity.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import curiosity.controller.command.*;
+import curiosity.rover.Rover;
+
+public class RoverController {
+	
+	public RoverController(Rover rover) {
+		this.rover = rover;
+	}
+		
+	public boolean executeTask(List<String> task) {
+		
+		boolean success = true;
+		
+		while (ip < task.size() && success) {
+			String instruction = task.get(ip);
+				
+			if (instruction.equals("forward")) {
+				// se mueve una posición hacia delante salvo que se encuentre con un obstáculo
+				success = rover.moveForward();
+				addUndoableTask(new MoveFordwardCommand(rover));
+			} else if (instruction.equals("backward")) {
+				// se mueve una posición hacia atrás salvo que se encuentre con un obstáculo
+				success = rover.moveBackward();
+				addUndoableTask(new MoveBackwardCommand(rover));
+			} else if (instruction.equals("left")) {
+				rover.turnLeft();
+				addUndoableTask(new RotateLeftCommand(rover));
+			} else if (instruction.equals("right")) {
+				rover.turnRight();
+				addUndoableTask(new RotateRightCommand(rover));
+			} else if (instruction.equals("sample")) {
+				rover.takeSample();
+			} else if (instruction.equals("photo")) {
+				rover.takePhoto();
+			} else {
+				rover.trace("Unknown instruction!");				
+			}
+			
+			if (success)
+				ip++;
+		}
+		
+		if (success)
+			rover.trace("Task finished");
+		else
+			rover.trace("Task couldn't have been completed");
+
+		return success;
+	}
+	
+	private void addUndoableTask(UndoableCommand undoableTask) {
+		undoableTasks.add(0, undoableTask);
+	}
+	
+	private void undoDoneTasks() {
+		for(UndoableCommand uc : undoableTasks) {
+			uc.undo();
+		}
+	}
+	
+	private Rover rover;
+	private int ip;		
+	
+	private List<UndoableCommand> undoableTasks = new ArrayList<Command>();
+}

@@ -1,0 +1,5 @@
+package curiosity.controller.command;
+
+public class MoveBackwardsCommand implements Command  {
+
+}

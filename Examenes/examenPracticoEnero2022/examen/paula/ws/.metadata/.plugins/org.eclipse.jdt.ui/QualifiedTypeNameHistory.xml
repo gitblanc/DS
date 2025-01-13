@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="curiosity.rover.Rover"/>
+    <fullyQualifiedTypeName name="curiosity.controller.command.Command"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="curiosity.controller.command.MoveBackwardCommand"/>
+    <fullyQualifiedTypeName name="curiosity.controller.command.RotateLeftCommand"/>
+    <fullyQualifiedTypeName name="curiosity.controller.command.RotateRightCommand"/>
+    <fullyQualifiedTypeName name="curiosity.controller.command.UndoableCommand"/>
+    <fullyQualifiedTypeName name="curiosity.controller.RoverController"/>
+    <fullyQualifiedTypeName name="curiosity.controller.obstacleBehaviour.ObstacleBehaviour"/>
+    <fullyQualifiedTypeName name="curiosity.controller.obstacleBehaviour.ReturnOrigin"/>
+    <fullyQualifiedTypeName name="curiosity.controller.obstacleBehaviour.JumpNextTask"/>
+    <fullyQualifiedTypeName name="curiosity.controller.obstacleBehaviour.StayInPlace"/>
+</qualifiedTypeNameHistroy>

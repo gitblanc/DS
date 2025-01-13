@@ -1,0 +1,5 @@
+package curiosity.controller.command;
+
+public interface Command {
+
+}
