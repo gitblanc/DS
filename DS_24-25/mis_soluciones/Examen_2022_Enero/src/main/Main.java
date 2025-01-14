@@ -4,47 +4,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 import curiosity.controller.RoverController;
-import curiosity.rover.Estado;
-import curiosity.rover.Instruccion;
+import curiosity.controller.comportamientos.*;
 import curiosity.rover.Rover;
-import curiosity.rover.instrucciones.Backward;
-import curiosity.rover.instrucciones.Forward;
-import curiosity.rover.instrucciones.Left;
-import curiosity.rover.instrucciones.Photo;
-import curiosity.rover.instrucciones.Right;
-import curiosity.rover.instrucciones.Sample;
 import mars.Terrain;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		Rover rover = new Rover(new Terrain());
-		Estado estado = new Estado(rover);
-		RoverController controller = new RoverController(estado);
+		
+		// Con la ampliación de las estrategias
+		RoverController controller = new RoverController(rover, new VolverInicio());
+//		RoverController controller = new RoverController(rover, new SaltarSiguiente());
+//		RoverController controller = new RoverController(rover, new Detenerse());
+		
+		List<String> task = new ArrayList<>();
+		
+		task.add("forward");	// 0:1
+		task.add("sample");
+		task.add("backward");	// 0:0
+		task.add("left");
+		task.add("backward");	// 1:0
+		task.add("right");
+		task.add("forward");	// obstáculo en 1:1
+		task.add("forward");	// obstáculo en 1:1
+		task.add("right");
+		task.add("forward");
+		task.add("left");
+		task.add("forward");
+		task.add("forward");
+		task.add("forward");
+		task.add("photo");
+		task.add("sample");
+		task.add("left");
+		task.add("backward");
+		task.add("photo");
 
-		List<Instruccion> task = new ArrayList<>();
-
-		task.add(new Forward());
-		task.add(new Sample());
-		task.add(new Backward());
-		task.add(new Left());
-		task.add(new Backward());
-		task.add(new Right());
-		task.add(new Forward());
-		task.add(new Forward());
-		task.add(new Right());
-		task.add(new Forward());
-		task.add(new Left());
-		task.add(new Forward());
-		task.add(new Forward());
-		task.add(new Forward());
-		task.add(new Photo());
-		task.add(new Sample());
-		task.add(new Left());
-		task.add(new Backward());
-		task.add(new Photo());
 		controller.executeTask(task);
-
+		
 		rover.transmit();
 	}
 }

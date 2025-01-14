@@ -2,32 +2,92 @@ package curiosity.controller;
 
 import java.util.List;
 
-import curiosity.rover.Estado;
-import curiosity.rover.Instruccion;
+import curiosity.controller.comandos.Backward;
+import curiosity.controller.comandos.Forward;
+import curiosity.controller.comandos.Left;
+import curiosity.controller.comandos.Photo;
+import curiosity.controller.comandos.Right;
+import curiosity.controller.comandos.Sample;
+import curiosity.rover.Rover;
 
 public class RoverController {
 
-	private Estado estado;
+	private ActionManager actionManager;
+	private Rover rover;
+	private int ip;
+	private boolean success;
+	private ComportamientoObstaculo comportamientoObstaculo;
 
-	public RoverController(Estado e) {
-		this.estado = e;
+	public RoverController(Rover rover, ComportamientoObstaculo comp) {
+		this.rover = rover;
+		this.actionManager = new ActionManager(this);
+		this.comportamientoObstaculo = comp;
 	}
 
-	public boolean executeTask(List<Instruccion> task) {
+	public boolean executeTask(List<String> task) {
 
-		while (estado.getIp() < task.size() && estado.getSuccess()) {
-			Instruccion instruccion = task.get(estado.getIp());
-			instruccion.execute(this.estado);
+		success = true;
+		UndoableComando c;
 
-			if (estado.getSuccess())
-				estado.updateIp();
+		while (ip < task.size() && success) {
+			String instruction = task.get(ip);
+
+			if (instruction.equals("forward")) {
+				c = new Forward();
+				actionManager.execute(c);
+			} else if (instruction.equals("backward")) {
+				c = new Backward();
+				actionManager.execute(c);
+			} else if (instruction.equals("left")) {
+				c = new Left();
+				actionManager.execute(c);
+			} else if (instruction.equals("right")) {
+				c = new Right();
+				actionManager.execute(c);
+			} else if (instruction.equals("sample")) {
+				actionManager.execute(new Sample());
+			} else if (instruction.equals("photo")) {
+				actionManager.execute(new Photo());
+			} else {
+				rover.trace("Unknown instruction!");
+			}
+
+			if (success)
+				ip++;
+			else
+				setSuccess(comportamientoObstaculo.obstaculoEncontrado(this));
 		}
 
-		if (estado.getSuccess())
-			estado.getRover().trace("Task finished");
-		else
-			estado.getRover().trace("Task couldn't have been completed");
+		if (success)
+			rover.trace("Task finished");
+		else {
+			rover.trace("Task couldn't have been completed");
+		}
 
-		return estado.getSuccess();
+		return success;
+	}
+
+	public Rover getRover() {
+		return this.rover;
+	}
+
+	public void setSuccess(boolean c) {
+		this.success = c;
+	}
+
+	public boolean getSuccess() {
+		return this.success;
+	}
+
+	public int getIp() {
+		return this.ip;
+	}
+
+	public void setIp(int i) {
+		this.ip = i;
+	}
+
+	public void deshacerComandos() {
+		actionManager.deshacerComandos();
 	}
 }
