@@ -1,4 +1,0 @@
-
-public interface InstructionType {
-	int executeInstruction(int ip);
-}
