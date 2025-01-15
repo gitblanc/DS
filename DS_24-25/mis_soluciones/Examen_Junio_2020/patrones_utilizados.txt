@@ -1,0 +1,17 @@
+Patrones utilizados
+
+Patrón utilizado: Adapter (de objetos)
+Participantes
+-------------
+1) Cliente: Machine
+2) Interfaz del Cliente: MetodoPago
+3) Adapter: PagoEfectivo, PagoPaypal y PagotarjetaCredito
+4) Adaptee: PaypalAPI y BankGateway
+
+Patrón utilizado: Strategy
+Participantes
+-------------
+1) Context: Machine
+2) Strategy: interfaz CodigoPromocional
+3) Client: Main
+4) ConcreteStrategies: CantidadFija, EntradaGratis y Porcentaje
