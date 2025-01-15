@@ -20,7 +20,7 @@ Soluciones de los patrones aplicados en cada práctica:
           </tr>
           <tr>
             <td>P2 (Máquina virtual)</td>
-            <td>State y Template Method</td>
+            <td>State, Command y Template Method</td>
           </tr>
           <tr>
             <td>P3 (Editor parte 1)</td>

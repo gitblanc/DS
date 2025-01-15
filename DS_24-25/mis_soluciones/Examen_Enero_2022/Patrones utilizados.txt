@@ -1,9 +1,11 @@
 Patrones utilizados
 
-Patrón utilizado: State
+Patrón utilizado: Command
 Participantes
 -------------
-1) Contexto: RoverController
-2) State: Estado
-3) Cliente: Main
-4) Estados Concretos: Forward, Backward, Left, Right, Photo, Sample
+pereza
+
+Patrón utilizado: Strategy
+Participantes
+-------------
+pereza

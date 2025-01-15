@@ -8,6 +8,11 @@ Participantes
 3) Cliente: Main
 4) Estados Concretos: Jmpg, Jmp, AumentarIp (clase abstracta responsable del Template Method)
 
+Patrón utilizado: Command
+Participantes
+-------------
+pereza
+
 Patrón utilizado: Template Method
 Participantes
 -------------
