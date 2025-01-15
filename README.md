@@ -1,7 +1,7 @@
 # DS
 ![](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 
-Soluciones de los patrones aplicados en cada práctica:
+[Soluciones de los patrones aplicados en cada práctica](https://github.com/gitblanc/DS/tree/main/DS_24-25/mis_soluciones):
 
 <table>
   <tr>
