@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package gui.botones;
+
+import gui.Boton;
+import gui.Canvas;
+import model.Line;
+
+/**
+ * 
+ */
+public class Centrado implements Boton {
+
+	private Canvas canvas;
+
+	public Centrado(Canvas canvas) {
+		this.canvas = canvas;
+	}
+
+	@Override
+	public void dibujaTexto(Line line) {
+		this.canvas.append(createCenteredLine(line));
+	}
+
+}

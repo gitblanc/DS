@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package gui.botones;
+
+import gui.Boton;
+import gui.Canvas;
+
+/**
+ * 
+ */
+public class Centrado implements Boton {
+
+	public Centrado(Canvas canvas) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

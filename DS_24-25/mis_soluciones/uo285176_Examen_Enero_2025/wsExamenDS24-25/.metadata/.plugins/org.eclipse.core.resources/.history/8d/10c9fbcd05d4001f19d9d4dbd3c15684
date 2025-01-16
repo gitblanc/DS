@@ -1,0 +1,8 @@
+Patrón utilizado: State
+Participantes
+-------------
+1) Contexto: Canvas
+2) State: interfaz BotonAlineacion
+3) Cliente: Window
+4) Estados Concretos: AlinearDerecha, AlinearIzquierda, Centrado y Justificado
+

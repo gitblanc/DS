@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package gui.botones;
+
+import gui.Boton;
+import gui.Canvas;
+import model.Line;
+
+/**
+ * 
+ */
+public class Justificado implements Boton {
+
+	public Justificado(Canvas canvas) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void dibujaTexto(Line line) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

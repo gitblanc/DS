@@ -1,0 +1,15 @@
+Patrón utilizado: State
+Participantes
+-------------
+1) Contexto: Canvas
+2) State: interfaz BotonAlineacion
+3) Cliente: Window
+4) Estados Concretos: AlinearDerecha, AlinearIzquierda, Centrado y Justificado
+
+Cambios aplicados:
+1) Se ha refactorizado la clase Canvas de forma que ahora recibe un Array de botones 
+que se guardan en un Map en forma de posibles Estados del editor. Ahora el método drawDocument(), 
+en lugar de tener varios if-else por cada botón, únicamente llama al método dibujaTexto() del botonSeleccionado.
+2) En el listener de Window, ahora también se cambia el botón seleccionado.
+3) Cada Estado guarda una referencia al Canvas para realizar los cambios pertinentes en el mismo con respecto 
+a la alineación del texto

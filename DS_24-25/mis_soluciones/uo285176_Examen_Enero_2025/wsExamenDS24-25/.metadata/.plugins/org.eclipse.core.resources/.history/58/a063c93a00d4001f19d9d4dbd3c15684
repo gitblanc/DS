@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package gui.botones;
+
+import gui.Boton;
+import gui.Canvas;
+
+/**
+ * 
+ */
+public class Justificado implements Boton {
+
+	public Justificado(Canvas canvas) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

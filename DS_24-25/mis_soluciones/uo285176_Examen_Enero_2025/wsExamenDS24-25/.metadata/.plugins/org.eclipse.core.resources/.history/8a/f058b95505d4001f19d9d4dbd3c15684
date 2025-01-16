@@ -1,0 +1,9 @@
+Patrones utilizados
+
+Patrón utilizado: State
+Participantes
+-------------
+1) Contexto: Editor
+2) State: interfaz Herramienta
+3) Cliente: Main
+4) Estados Concretos: HerramientaSeleccion, HerramientaTriangulo, HerramientaCreacion (clase abstracta responsable del Template Method para rectangulo y circulo, que comparten código común)

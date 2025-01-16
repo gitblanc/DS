@@ -1,0 +1,9 @@
+Patrones utilizados
+
+Patrón utilizado: State
+Participantes
+-------------
+1) Contexto: Canvas
+2) State: interfaz BotonAlineacion
+3) Cliente: Main
+4) Estados Concretos: HerramientaSeleccion, HerramientaTriangulo, HerramientaCreacion (clase abstracta responsable del Template Method para rectangulo y circulo, que comparten código común)

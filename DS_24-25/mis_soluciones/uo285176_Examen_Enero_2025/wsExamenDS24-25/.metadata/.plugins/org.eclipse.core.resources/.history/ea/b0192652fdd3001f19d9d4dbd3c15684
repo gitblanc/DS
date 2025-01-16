@@ -1,0 +1,87 @@
+package gui;
+
+import java.awt.Font;
+import java.awt.FontMetrics;
+
+import javax.swing.BorderFactory;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+
+import model.Document;
+import model.Line;
+
+public class Canvas extends JTextArea {
+
+	private Document document;
+	private int lineWidth; // Number of characters per line
+
+	private JRadioButton leftButton;
+	private JRadioButton justifiedButton;
+
+	public Canvas(Document document, JRadioButton leftButton, JRadioButton justifiedButton, JRadioButton rightButton,
+			JRadioButton centeredButton) {
+		setFont(new Font("Monospaced", Font.BOLD, 24));
+		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		setEditable(false);
+
+		this.document = document;
+		this.leftButton = leftButton;
+		this.justifiedButton = justifiedButton;
+
+		drawDocument();
+	}
+
+	/**
+	 * Adjust the number of characters per line to the given width in pixels. It is
+	 * invoked when the container window is resized.
+	 */
+	public void adjustWidth(int width) {
+		FontMetrics metrics = getFontMetrics(getFont());
+		var charWidth = metrics.charWidth('A');
+		var padding = getInsets().left + getInsets().right;
+		lineWidth = (width - padding) / charWidth;
+
+		drawDocument();
+	}
+
+	public void drawDocument() {
+		setText("");
+
+		for (var line : document.getLines()) {
+
+			if (leftButton.isSelected()) { // Left alignment
+				append(line.getContent());
+
+			} else if (justifiedButton.isSelected()) { // Justified
+				append(createJustifiedLine(line));
+			}
+
+			append("\n");
+		}
+	}
+
+	private String createJustifiedLine(Line line) {
+		var builder = new StringBuilder();
+		var totalSpacesNeeded = lineWidth - line.numberOfCharacters();
+
+		// Compute the number of spaces per gap
+		var spacesPerGap = Math.max(1, totalSpacesNeeded / line.numberOfGaps());
+		// The remaining spaces are distributed from left to right
+		var extraSpaces = Math.max(0, totalSpacesNeeded - (spacesPerGap * line.numberOfGaps()));
+
+		for (int i = 0; i < line.getWords().size(); i++) {
+			builder.append(line.getWord(i));
+
+			if (i < line.numberOfWords() - 1) {
+				builder.append(" ".repeat(spacesPerGap));
+
+				if (extraSpaces > 0) {
+					builder.append(" ");
+					extraSpaces--;
+				}
+			}
+		}
+
+		return builder.toString();
+	}
+}

@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package gui.botones;
+
+import gui.Boton;
+import gui.Canvas;
+
+/**
+ * 
+ */
+public class AlinearIzquierda implements Boton {
+
+	public AlinearIzquierda(Canvas canvas) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

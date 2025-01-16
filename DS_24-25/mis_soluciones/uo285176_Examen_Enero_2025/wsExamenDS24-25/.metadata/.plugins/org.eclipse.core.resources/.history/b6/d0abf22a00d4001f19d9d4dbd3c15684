@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package gui.botones;
+
+import gui.Boton;
+
+/**
+ * 
+ */
+public class AlinearIzquierda implements Boton {
+
+}

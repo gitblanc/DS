@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\UO285176\Desktop\wsExamenDS24-25\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3803894794.index
+1447757771.index

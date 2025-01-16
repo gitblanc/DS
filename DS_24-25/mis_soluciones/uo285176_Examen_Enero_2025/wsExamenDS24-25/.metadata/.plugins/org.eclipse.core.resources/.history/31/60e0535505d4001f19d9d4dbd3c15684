@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package gui;
+
+import model.Line;
+
+/**
+ * 
+ */
+public interface Boton {
+
+	void dibujaTexto(Line line);
+
+}

@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package gui.botones;
+
+import gui.BotonAlineacion;
+import gui.Canvas;
+import model.Line;
+
+/**
+ * 
+ */
+public class Centrado implements BotonAlineacion {
+
+	private Canvas canvas;
+
+	public Centrado(Canvas canvas) {
+		this.canvas = canvas;
+	}
+
+	@Override
+	public void dibujaTexto(Line line) {
+		this.canvas.append(createCenteredLine(line));
+	}
+
+	// Método para la ampliación encargado de centrar el texto
+	private String createCenteredLine(Line line) {
+		var builder = new StringBuilder();
+		var totalSpacesNeeded = this.canvas.getLineWidth() - line.numberOfCharacters();
+
+		// Compute the number of spaces per gap
+		var spacesPerGap = Math.max(1, totalSpacesNeeded / line.numberOfGaps());
+		// The remaining spaces are distributed from left to right
+		var extraSpaces = Math.max(0, totalSpacesNeeded - (spacesPerGap * line.numberOfGaps()));
+
+		var spacesLeft = (totalSpacesNeeded / 2) - spacesPerGap;
+		var spacesRight = (totalSpacesNeeded / 2) - spacesPerGap;
+
+		builder.append(" ".repeat(spacesLeft));
+
+		for (int i = 0; i < line.getWords().size(); i++) {
+
+			builder.append(" " + line.getWord(i));
+
+			if (i > line.numberOfWords() - 1) {
+
+				if (extraSpaces > 0) {
+					builder.append(" ");
+					extraSpaces--;
+				}
+			}
+		}
+
+		return builder.toString();
+	}
+}
